@@ -130,8 +130,8 @@ section.movie {
   .image {
     @extend .col-md-3, .text-center;
     img {
-      width: 100px;
-      box-shadow: $box-shadow;
+      width: 150px;
+      // box-shadow: $box-shadow;
     }
   }
 
@@ -166,7 +166,7 @@ section.movie-details {
   @extend .row;
 
   .image {
-    @extend .col-md-3, .text-left;
+    @extend .col-md-3, .text-center;
 
     input[type="submit"] {
       margin-top: 1rem;
@@ -238,8 +238,8 @@ section.movie-details {
 
   img {
     margin-top: 0.5rem;
-    width: 150px;
-    box-shadow: $box-shadow;
+    width: 200px;
+    // box-shadow: $box-shadow;
   }
 
   a.review {
@@ -383,6 +383,13 @@ footer {
   }
 }
 
+//Flair Button
+a.button-flair {
+  @extend .btn;
+  letter-spacing: 1px;
+  background-color:#ffb002;
+}
+
 // Admin Section
 
 section.admin {
@@ -414,6 +421,7 @@ section.admin {
     background-color:$dark-red;
     border-color: $dark-red;
   }
+
 }
 
 section.movie + section.admin {

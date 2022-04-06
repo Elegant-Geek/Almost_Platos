@@ -9,6 +9,10 @@
         <%= label_tag star %>
     </span>
   <% end %>
+  <p></p> 
+<%# ^ adding some space after stars%>
+  <%= f.label :optional_flair %>
+  <%= f.select :flair, Item::FLAIRS, default: "no flair" %>
 
   <%= f.label :description %>
   <%= f.text_area :description, rows: 5 %>
@@ -21,6 +25,9 @@
 
   <%= f.label :found_on %>
   <%= f.date_field :found_on %>
+
+  <%= f.label :image_file_name %>
+  <%= f.text_field :image_file_name %>
 
   <%= f.submit %>
 <% end %>

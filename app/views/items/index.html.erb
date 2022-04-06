@@ -1,12 +1,14 @@
 <% @items.each do |item| %>
   <section class="movie">
+  <div class="image">
+    <%= image_tag item.image_file_name %>
+    </div>
     <div class="summary">
       <h2>
         <%= link_to(item.name, item_path(item)) %> (<%= item.stars %>):
       </h2>
-
       <%# truncate movie description to 20 words and cuts off during a space not mid-word%>
-      <% if item.found_on.present? && item.found_on.class == Date %>
+      <% if item.found_on.present? %>
         <h3>Found <%= format_found_on(item) %></h3>
       <% end %>
       

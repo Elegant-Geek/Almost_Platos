@@ -10,17 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_05_224507) do
+ActiveRecord::Schema.define(version: 2022_04_06_223849) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.integer "stars"
     t.text "description"
-    t.date "found_on"
+    t.date "found_on", default: "2022-04-06"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "brand"
     t.text "size"
+    t.text "flair"
+    t.string "image_file_name", default: "placeholder-2.png"
   end
 
 end

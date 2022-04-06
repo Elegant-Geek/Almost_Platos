@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
     def index
         # @items = ["Jacket", "Sweater", "Pants"]
+        # @items = Item.all
         @items = Item.all
     end
 
@@ -36,7 +37,7 @@ class ItemsController < ApplicationController
 
     private
     def item_params
-        params.require(:item).permit(:name, :stars, :description, :found_on, :brand, :size)
+        params.require(:item).permit(:name, :stars, :description, :found_on, :brand, :size, :flair, :image_file_name)
     end
 end
 

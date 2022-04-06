@@ -1,11 +1,14 @@
 <section class="movie-details">
+<div class="image">
+    <%= image_tag @item.image_file_name %>
+  </div>
   <div class="details">
-    <h1><%= @item.name %></h1>
-    <h2>
+  <%= render "h1flair", item: @item%>    
+  <h2>
       <%= @item.stars %>
     </h2>
     <p>
-      <%= @item.description %>
+      <%= @item.description %> 
     </p>
     <table>
       <tr>
@@ -18,7 +21,7 @@
       </tr>
       <tr>
         <th>Found on:</th>
-        <td><%= @item.found_on.strftime("%-m/%-d/%-y") %></td>
+        <td><%= format_found_on(@item) %></td>
       </tr>
       <tr>
         <th>Last Updated:</th>

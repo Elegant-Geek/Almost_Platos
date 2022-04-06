@@ -16,6 +16,8 @@ Item.create!([
     }.squish,
     found_on: "2021-02-26",
     brand: 'Levi',
+    image_file_name: 'denim-jacket.JPG',
+    flair: 'Sold',
     size: "M"
   },
   {
@@ -27,6 +29,8 @@ Item.create!([
     }.squish,
     found_on: "2022-04-04",
     brand: 'Unknown',
+    image_file_name: 'yellow-hat.JPG',
+    flair: 'Bought',
     size: "One Size"
   },
   {
@@ -38,6 +42,8 @@ Item.create!([
     }.squish,
     found_on: "2022-03-26",
     brand: 'Unknown',
+    image_file_name: 'summer-tank.JPG',
+    flair: 'Favorite',
     size: "M"
   },
   {
@@ -49,6 +55,7 @@ Item.create!([
     }.squish,
     found_on: "2022-03-23",
     brand: 'Unknown',
+    image_file_name: 'butterfly-tee.JPG',
     size: "S"
   },
   {
@@ -60,6 +67,7 @@ Item.create!([
     }.squish,
     found_on: "2022-03-23",
     brand: 'Shein',
+    image_file_name: 'checker-shirt.JPG',
     size: "S"
   },
   {
@@ -71,6 +79,7 @@ Item.create!([
     }.squish,
     found_on: "2021-02-27",
     brand: 'Unknown',
+    image_file_name: 'hoodie-1.JPG',
     size: "L"
   }
 ])
