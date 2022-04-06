@@ -2,19 +2,23 @@
   <section class="movie">
     <div class="summary">
       <h2>
-        <strong><%= item.name %></strong> (<%= item.stars %>):
+        <%= link_to(item.name, item_path(item)) %> (<%= item.stars %>):
       </h2>
-      <h3>
-        <%# truncate movie description to 20 words and cuts off during a space not mid-word%>
-        <% if item.found_on.present? %>
-                <%= format_found_on(item) %>, <%= format_updated_at(item) %>
-        <% else %>
-                <%= format_updated_at(item) %>
-        <% end %>
-      </h3>
+
+      <%# truncate movie description to 20 words and cuts off during a space not mid-word%>
+      <% if item.found_on.present? && item.found_on.class == Date %>
+        <h3>Found <%= format_found_on(item) %></h3>
+      <% end %>
+      
       <p>
          <%= truncate(item.description, length: 50, separator: ' ') %>
       </p>
     </div>
   </section>
 <% end %>
+
+<%# if current_user_admin? %>
+  <section class="admin">
+    <%= link_to "Add New Item", new_item_url, class: "button" %>
+  </section>
+<%# end %>

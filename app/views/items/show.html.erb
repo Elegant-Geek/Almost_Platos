@@ -1,0 +1,37 @@
+<section class="movie-details">
+  <div class="details">
+    <h1><%= @item.name %></h1>
+    <h2>
+      <%= @item.stars %>
+    </h2>
+    <p>
+      <%= @item.description %>
+    </p>
+    <table>
+      <tr>
+        <th>Size:</th>
+        <td><%= @item.size %></td>
+      </tr>
+      <tr>
+        <th>Brand:</th>
+        <td><%= @item.brand %></td>
+      </tr>
+      <tr>
+        <th>Found on:</th>
+        <td><%= @item.found_on.strftime("%-m/%-d/%-y") %></td>
+      </tr>
+      <tr>
+        <th>Last Updated:</th>
+        <td><%= format_updated_at(@item) %></td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<%# if current_user_admin? %>
+  <section class="admin">
+    <%= link_to "Edit Item", edit_item_url, class: "button" %>
+    <%= link_to "Delete Item", item_path(@item), class: "button-delete", method: :delete,
+    data: { confirm: 'Delete Item?!' }  %>
+  </section>
+<%# end %>

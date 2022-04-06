@@ -11,7 +11,7 @@ $orange: #e8890c;
 $yellow: #ffc107;
 $light-yellow: #ffc;
 $red: #dc3545;
-
+$dark-red: #8B0000;
 // Custom Variables
 
 $secondary-text-color: $medium-gray;
@@ -46,7 +46,15 @@ $secondary: $dark-gray;
 header {
   background-color: $primary;
   padding: 0.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
+  // added this padding, width, and position to fix it to the top:
+  padding-left: 4.5rem;
+  width: 100%;
+  // position: sticky keeps the header in the stack! Use sticky not fixed.
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  // ^^ threw this up at 10
 
   nav {
     @extend .navbar, .navbar-expand-md;
@@ -109,7 +117,6 @@ header {
 }
 
 // Movies Index Page
-
 section.movie {
   @extend .row;
   margin-bottom: 1.5rem;
@@ -367,8 +374,13 @@ footer {
   color: $light-gray;
   text-align: center;
   margin-top: 3rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  
+// making the single copyright line centered by overriding p tag defaults specifically for the footer:
+  p{
+    margin-bottom: 0rem;
+  }
 }
 
 // Admin Section
@@ -388,6 +400,19 @@ section.admin {
     @extend .btn, .btn-secondary;
     letter-spacing: 1px;
     text-transform: uppercase;
+  }
+
+  a.button-delete {
+    @extend .btn, .btn-secondary;
+    letter-spacing: 1px;
+    border-color: $red;
+    background-color: $red;
+    text-transform: uppercase;
+  }
+
+  a.button-delete:hover {
+    background-color:$dark-red;
+    border-color: $dark-red;
   }
 }
 

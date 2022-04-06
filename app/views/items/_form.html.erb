@@ -1,0 +1,26 @@
+<%= form_with(model: @item, local: true) do |f| %>
+  <%= f.label :item_name %>
+  <%= f.text_field :name, autofocus: true %>
+
+ <%= f.label :stars %>
+  <% Item::STARS.each do |star| %>
+    <span class="star">
+        <%= f.radio_button :stars, star %>
+        <%= label_tag star %>
+    </span>
+  <% end %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description, rows: 5 %>
+
+  <%= f.label :size %>
+  <%= f.select :size, Item::SIZES, prompt: "Pick one" %>
+
+  <%= f.label :brand %>
+  <%= f.select :brand, Item::BRANDS, prompt: "Pick one" %>
+
+  <%= f.label :found_on %>
+  <%= f.date_field :found_on %>
+
+  <%= f.submit %>
+<% end %>
