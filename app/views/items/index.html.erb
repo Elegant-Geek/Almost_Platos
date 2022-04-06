@@ -1,0 +1,20 @@
+<% @items.each do |item| %>
+  <section class="movie">
+    <div class="summary">
+      <h2>
+        <strong><%= item.name %></strong> (<%= item.stars %>):
+      </h2>
+      <h3>
+        <%# truncate movie description to 20 words and cuts off during a space not mid-word%>
+        <% if item.found_on.present? %>
+                <%= format_found_on(item) %>, <%= format_updated_at(item) %>
+        <% else %>
+                <%= format_updated_at(item) %>
+        <% end %>
+      </h3>
+      <p>
+         <%= truncate(item.description, length: 50, separator: ' ') %>
+      </p>
+    </div>
+  </section>
+<% end %>

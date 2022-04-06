@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flashion</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+<header><%= image_tag("final-logo.png", :height => 65) %></header>
+
+  <body>
+    <%= yield %>
+  </body>
+
+<footer>
+  <p>
+      All CSS/Sass Stylings are Copyright &copy; <%= Time.now.year %>
+      <%= link_to 'The Pragmatic Studio','https://pragmaticstudio.com' %>
+    </p>
+</footer>
+
+</html>
