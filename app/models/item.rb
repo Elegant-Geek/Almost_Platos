@@ -1,6 +1,5 @@
 class Item < ApplicationRecord
 
-
     FLAIRS = ["no flair", "Bought", "Sold", "Favorite"]
 
     SIZES = ["XS", "S", "M", "L", "XL", "Unknown", "One Size", "Other", "Shoe: 7.5M", "Shoe 8M", "Shoe 8.5W", "Shoe 9W", "Shoe 9.5W"]
@@ -18,6 +17,19 @@ class Item < ApplicationRecord
          "Shein", "Skechers", "Sonoma", "Southern Tide", "Sperrys", "Tek Gear", "Topshop", "Torrid", "Under Armour", 
          "Urban Outfitters", "Vans", "Vineyard Vines", "Volcom", "Wild Fable", "Zara"]
 
+  validates :description, :found_on, :stars, :size, :brand, presence: true
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
+  #^^ item names are unique regardless of whether they use upper or lower case characters!
+  validates :description, length: { minimum: 20 }
+  validates :image_file_name, format: {
+    with: /\w+\.(jpg|png)\z/i,
+    message: "must be a JPG or PNG image"
+  }
+  validates :flair, inclusion: { in: FLAIRS }
+  validates :size, inclusion: { in: SIZES }
+  validates :brand, inclusion: { in: BRANDS }
+  validates :stars, inclusion: { in: STARS } 
+
     def stars_as_percent
       (stars / 5.0) * 100.0
     end
@@ -33,5 +45,10 @@ class Item < ApplicationRecord
     def self.favorite
       where(flair: "Favorite").order("found_on desc") #orders most recently found to the top!
     end
+
+    def self.everything
+      order("found_on desc") #simply lists everything out and then orders most recently found to the top.
+    end
+
 end
 

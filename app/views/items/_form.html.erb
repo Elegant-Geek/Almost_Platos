@@ -1,4 +1,6 @@
-<%= form_with(model: @item, local: true) do |f| %>
+<%= form_with(model: item, local: true) do |f| %>
+<%= render "shared/errors", object: item %>
+
   <%= f.label :item_name %>
   <%= f.text_field :name, autofocus: true %>
 

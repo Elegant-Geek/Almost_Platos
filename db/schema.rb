@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_06_223849) do
+ActiveRecord::Schema.define(version: 2022_04_07_030713) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -21,8 +21,17 @@ ActiveRecord::Schema.define(version: 2022_04_06_223849) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "brand"
     t.text "size"
-    t.text "flair"
+    t.text "flair", default: "no flair"
     t.string "image_file_name", default: "placeholder-2.png"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
   end
 
 end

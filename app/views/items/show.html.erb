@@ -5,7 +5,7 @@
   <div class="details">
   <%= render "h1flair", item: @item%>    
   <h2>
-      <%= @item.stars %>
+      <%= render "shared/stars", percent: @item.stars_as_percent %>
     </h2>
     <p>
       <%= @item.description %> 

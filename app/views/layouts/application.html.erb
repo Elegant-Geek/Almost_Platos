@@ -13,7 +13,9 @@
   <body>
     <%= render "layouts/header" %>
     <%# this class="content" div makes the body spacing look really good %>
+    
     <div class="content">
+      <%= render "layouts/flash" %>
       <%= yield %>
     </div>
 

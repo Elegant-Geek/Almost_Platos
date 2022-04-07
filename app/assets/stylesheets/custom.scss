@@ -53,7 +53,7 @@ header {
   // position: sticky keeps the header in the stack! Use sticky not fixed.
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 5;
   // ^^ threw this up at 10
 
   nav {
@@ -61,11 +61,12 @@ header {
 
     img {
       height: 50px;
-      margin-right: 0.5rem;
+      margin-right: 3rem;
     }
-
+// changing the color of header links from weird blueish thing, to off-white. Looks better!
     a {
-      color: $secondary-link-color;
+      // color: $secondary-link-color;
+      color: $off-white;
     }
 
     a.button {
@@ -152,6 +153,7 @@ section.movie {
 
   p {
     margin-top: 1.1rem;
+    font-size: 1.15em;
   }
 
   span.stars {
