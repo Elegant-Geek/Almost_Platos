@@ -27,7 +27,10 @@ private
   helper_method :current_user?
   # ^^allows this method to be a helper method available to ALL view templates
 
+  def require_correct_user
+    @user = User.find(params[:id]) #removes duplication for edit update destroy actions!
+    redirect_to root_url unless current_user?(@user)
+  end
 
- 
-
+  helper_method :require_correct_user
 end

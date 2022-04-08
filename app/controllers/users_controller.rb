@@ -41,7 +41,8 @@ class UsersController < ApplicationController
         # @user = User.find(params[:id])
         @user.destroy
         session[:user_id] = nil
-        redirect_to root_url, alert: "Account successfully deleted!"        
+        # redirect_to root_url, alert: "Account successfully deleted!"   
+        redirect_to login_url, alert: "Account successfully deleted!"  #this way no errors occur  
       end
 
       private
@@ -49,9 +50,10 @@ class UsersController < ApplicationController
         params.require(:user).permit(:name, :email, :password, :password_confirmation, :username)
       end
 
-      def require_correct_user
-        @user = User.find(params[:id]) #removes duplication for edit update destroy actions!
-        redirect_to root_url unless current_user?(@user)
-      end
+      # moved to applications controller to be re-used efficiently for/on ITEMS
+      # def require_correct_user
+      #   @user = User.find(params[:id]) #removes duplication for edit update destroy actions!
+      #   redirect_to root_url unless current_user?(@user)
+      # end
 
 end
