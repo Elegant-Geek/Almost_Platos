@@ -83,3 +83,13 @@ Item.create!([
     size: "L"
   }
 ])
+
+Complaint.create(name: "too big")
+Complaint.create(name: "too small")
+Complaint.create(name: "too thin")
+Complaint.create(name: "too thick")
+Complaint.create(name: "felt cheap")
+Complaint.create(name: "looks bad")
+Complaint.create(name: "bad fit")
+Complaint.create(name: "uncomfortable")
+Complaint.create(name: "not me")

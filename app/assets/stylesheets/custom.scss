@@ -15,7 +15,7 @@ $dark-red: #8B0000;
 // Custom Variables
 
 $secondary-text-color: $medium-gray;
-$accent-color: $orange;
+$accent-color: #ffb002;
 $secondary-link-color: $light-blue;
 $border-color: $light-gray;
 $error-color: $red;
@@ -129,7 +129,7 @@ section.movie {
   }
 
   .image {
-    @extend .col-md-3, .text-left;
+    @extend .col-md-3, .text-center;
     img {
       width: 150px;
       // box-shadow: $box-shadow;
@@ -160,16 +160,6 @@ section.movie {
     float: right;
     margin-top: -3.75rem;
   }
-
-  //Add Item Button
-  a.add-item-button {
-  @extend .btn;
-  letter-spacing: 1px;
-  background-color:#ffb002;
-  text-transform: uppercase;
-}
-
-  
 }
 
 // Movie Show Page
@@ -397,6 +387,10 @@ footer {
   p{
     margin-bottom: 0rem;
   }
+
+  .button-anchor {
+    @extend .btn, .btn-outline-light;
+  }
 }
 
 //Flair Button 
@@ -411,7 +405,7 @@ a.button-flair {
   
   h1 {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -429,7 +423,7 @@ a.button-flair {
 
 section.admin {
   text-align: center;
-  margin: 3rem 0;
+  margin: 1rem 0;
   padding-top: 2rem;
   border-top: 1px dashed $border-color;
 
@@ -445,17 +439,11 @@ section.admin {
   }
 
   a.button-delete {
-    @extend .btn, .btn-secondary;
+    @extend .btn, .btn-danger;
     letter-spacing: 1px;
-    border-color: $red;
-    background-color: $red;
     text-transform: uppercase;
   }
-
-  a.button-delete:hover {
-    background-color:$dark-red;
-    border-color: $dark-red;
-  }
+ 
 
 }
 
@@ -466,25 +454,32 @@ section.movie + section.admin {
 
 // Aside
 
-aside {
-  h4 {
-    color: $secondary-text-color;
-    font-size: 1rem;
-    margin-top: 1rem;
-    padding-bottom: 0.3rem;
-    text-transform: uppercase;
-    border-bottom: 1px solid $border-color;
-  }
 
-  ul {
-    list-style: none;
-    padding-left: 0.25rem;
 
-    li {
-      padding-bottom: 0.5rem;
+  .complaints {
+    padding: 0px;
+
+    h4 {
+      color: $secondary-text-color;
+      font-size: 1rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      text-transform: uppercase;
+      border-top: 1px solid $border-color;
+    }
+  
+    ul {
+      list-style: circle;
+      padding-left: 1rem;
+  
+      li {
+        padding-bottom: 0.5rem;
+      }
     }
   }
-}
+
+
+
 
 // Forms
 
@@ -553,7 +548,8 @@ form:not([class="button_to"]) {
 
   .checkboxes {
     @extend .form-check;
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
+    column-count: 2;
   }
 
   div.field_with_errors {

@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_08_070915) do
+ActiveRecord::Schema.define(version: 2022_04_08_091217) do
+
+  create_table "characterizations", force: :cascade do |t|
+    t.integer "item_id", null: false
+    t.integer "complaint_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["complaint_id"], name: "index_characterizations_on_complaint_id"
+    t.index ["item_id"], name: "index_characterizations_on_item_id"
+  end
 
   create_table "complaints", force: :cascade do |t|
     t.string "name"
@@ -40,4 +49,6 @@ ActiveRecord::Schema.define(version: 2022_04_08_070915) do
     t.string "username"
   end
 
+  add_foreign_key "characterizations", "complaints"
+  add_foreign_key "characterizations", "items"
 end

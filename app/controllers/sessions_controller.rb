@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
     def new
     end
-  
+
     def create
         user = User.find_by(email: params[:email_or_username]) ||
                User.find_by(username: params[:email_or_username])

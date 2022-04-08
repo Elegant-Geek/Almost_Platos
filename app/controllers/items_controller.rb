@@ -10,6 +10,8 @@ class ItemsController < ApplicationController
 
     def show
         # @item = Item.find(params[:id])
+        @complaints = @item.complaints.order(:name)
+
     end
 
     def edit
@@ -44,7 +46,8 @@ class ItemsController < ApplicationController
 
     private
     def item_params
-        params.require(:item).permit(:name, :stars, :description, :found_on, :brand, :size, :flair, :image_file_name)
+        params.require(:item)
+        .permit(:name, :stars, :description, :found_on, :brand, :size, :flair, :image_file_name, complaint_ids: [])
     end
 
     def set_item

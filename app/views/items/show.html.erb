@@ -3,32 +3,45 @@
     <%= image_tag @item.image_file_name %>
   </div>
   <div class="details">
-  <%= render "h1flair", item: @item%>    
-  <h2>
-      <%= render "shared/stars", percent: @item.stars_as_percent %>
-    </h2>
-    <p>
-      <%= @item.description %> 
-    </p>
-    <table>
-      <tr>
-        <th>Size:</th>
-        <td><%= @item.size %></td>
-      </tr>
-      <tr>
-        <th>Brand:</th>
-        <td><%= @item.brand %></td>
-      </tr>
-      <tr>
-        <th>Found on:</th>
-        <td><%= format_found_on(@item) %></td>
-      </tr>
-      <tr>
-        <th>Last Updated:</th>
-        <td><%= format_updated_at(@item) %></td>
-      </tr>
-    </table>
+    <%= render "h1flair", item: @item%>    
+    <h2>
+        <%= render "shared/stars", percent: @item.stars_as_percent %>
+      </h2>
+      <p>
+        <%= @item.description %> 
+      </p>
+      <table>
+        <tr>
+          <th>Size:</th>
+          <td><%= @item.size %></td>
+        </tr>
+        <tr>
+          <th>Brand:</th>
+          <td><%= @item.brand %></td>
+        </tr>
+        <tr>
+          <th>Found on:</th>
+          <td><%= format_found_on(@item) %></td>
+        </tr>
+        <tr>
+          <th>Last Updated:</th>
+          <td><%= format_updated_at(@item) %></td>
+        </tr>
+      </table>
+
+      <div class="complaints">
+        <% if @complaints.present? %>
+        <h4>Complaints:</h4>
+        <ul>
+        <% @complaints.each do |c| %>
+        <li><%= c.name %></li>
+        <% end %>
+        </ul>
+        <% end %>
+      </div>
   </div>
+
+
 </section>
 
 <%# if current_user_admin? %>

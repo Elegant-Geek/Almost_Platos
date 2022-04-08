@@ -1,5 +1,8 @@
 class Item < ApplicationRecord
 
+has_many :characterizations, dependent: :destroy
+has_many :complaints, through: :characterizations
+
     FLAIRS = ["no flair", "Bought", "Sold", "Favorite"]
 
     SIZES = ["XS", "S", "M", "L", "XL", "Unknown", "One Size", "Other", "Shoe: 7.5M", "Shoe 8M", "Shoe 8.5W", "Shoe 9W", "Shoe 9.5W"]
