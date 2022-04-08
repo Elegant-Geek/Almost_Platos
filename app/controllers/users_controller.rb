@@ -52,7 +52,6 @@ class UsersController < ApplicationController
       def require_correct_user
         @user = User.find(params[:id]) #removes duplication for edit update destroy actions!
         redirect_to root_url unless current_user?(@user)
-        end
       end
 
 end

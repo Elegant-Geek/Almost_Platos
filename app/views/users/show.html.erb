@@ -12,15 +12,12 @@
 
 <% if current_user?(@user) %>
   <div class="actions">
-    <%# if current_user?(@user) %>
         <%= link_to "Edit Account", edit_user_path(@user),
         class: "button edit" %>
-    <%# end %>
-    <%# if current_user_admin? %>
+
         <%= link_to "Delete Account", @user, method: :delete, 
         data: { confirm: 'Permanently delete account?!' },
         class: "button delete" %>
-    <%# end %>
   </div>
  <% end %> 
 

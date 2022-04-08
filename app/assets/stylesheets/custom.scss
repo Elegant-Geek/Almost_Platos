@@ -48,7 +48,7 @@ header {
   padding: 0.5rem;
   margin-bottom: 1.5rem;
   // added this padding, width, and position to fix it to the top:
-  padding-left: 4.5rem;
+  padding-left: 4rem;
   width: 100%;
   // position: sticky keeps the header in the stack! Use sticky not fixed.
   position: sticky;
@@ -129,7 +129,7 @@ section.movie {
   }
 
   .image {
-    @extend .col-md-3, .text-center;
+    @extend .col-md-3, .text-left;
     img {
       width: 150px;
       // box-shadow: $box-shadow;
@@ -160,6 +160,16 @@ section.movie {
     float: right;
     margin-top: -3.75rem;
   }
+
+  //Add Item Button
+  a.add-item-button {
+  @extend .btn;
+  letter-spacing: 1px;
+  background-color:#ffb002;
+  text-transform: uppercase;
+}
+
+  
 }
 
 // Movie Show Page
@@ -294,6 +304,10 @@ section.user {
         @extend .btn-outline-secondary;
       }
 
+      &.add {
+        @extend .btn-primary;
+      }
+
       &.delete {
         @extend .btn-danger;
       }
@@ -385,11 +399,30 @@ footer {
   }
 }
 
-//Flair Button
+//Flair Button 
 a.button-flair {
   @extend .btn;
   letter-spacing: 1px;
   background-color:#ffb002;
+}
+
+// MY OWN ADD BUTTON CSS!
+.index-page-header { 
+  
+  h1 {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+  a.button-add {
+    @extend .btn, .btn-success;
+    bottom: 0;
+    float: right;
+  }
 }
 
 // Admin Section

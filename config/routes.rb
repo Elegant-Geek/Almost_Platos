@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :complaints
   resource :session, only: [:new, :create, :destroy] #note singular form "resource and session. SINGULAR session"
   get "login" => "sessions#new"
   get "signup" => "users#new"
