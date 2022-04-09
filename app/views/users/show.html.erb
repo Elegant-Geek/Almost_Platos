@@ -1,10 +1,13 @@
 <section class="user">
   <%= profile_image(@user) %>
-  <h1><%= @user.name %>
+  <div class="index-page-header">
+  <h1><%= @user.name %> 
     <% if @user.username.present? %>
     (<%= @user.username %>)
     <% end %>
+  <%= link_to "View #{@user.name}'s Items", user_items_url(@user), class: "button-add" %> 
   </h1>
+  </div>
   <h2><%= mail_to(@user.email) %></h2>
   <p> Member Since
     <%= @user.created_at.strftime("%B %Y") %>

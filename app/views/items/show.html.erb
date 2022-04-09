@@ -44,10 +44,12 @@
 
 </section>
 
-<%# if current_user_admin? %>
+
   <section class="admin">
-    <%= link_to "Edit Item", edit_item_url, class: "button" %>
-    <%= link_to "Delete Item", item_path(@item), class: "button-delete", method: :delete,
+   <% if current_user?(@user) %>
+    <%#= link_to "Edit Item", edit_user_item_url(@user, item)), class: "button" %>
+    <%= link_to "Edit Item", edit_user_item_path(@user, @item), class: "button" %>
+    <%= link_to "Delete Item", [@user, @item], class: "button-delete", method: :delete,
     data: { confirm: 'Delete Item?!' }  %>
+    <% end %>
   </section>
-<%# end %>

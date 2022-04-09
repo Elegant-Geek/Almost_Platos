@@ -1,4 +1,7 @@
 class Item < ApplicationRecord
+  # uses singular form of the parent (user) for one to many
+  # no dependent destroy in this direction. Destroying item does NOT destroy user.
+  belongs_to :user 
 
 has_many :characterizations, dependent: :destroy
 has_many :complaints, through: :characterizations
@@ -21,9 +24,9 @@ has_many :complaints, through: :characterizations
          "Urban Outfitters", "Vans", "Vineyard Vines", "Volcom", "Wild Fable", "Zara"]
 
   validates :description, :found_on, :stars, :size, :brand, presence: true
-  validates :name, presence: true, uniqueness: { case_sensitive: false }
+  validates :name, presence: true#, uniqueness: { case_sensitive: false }
   #^^ item names are unique regardless of whether they use upper or lower case characters!
-  validates :description, length: { minimum: 20 }
+  validates :description, length: { minimum: 10 }
   validates :image_file_name, format: {
     with: /\w+\.(jpg|png)\z/i,
     message: "must be a JPG or PNG image"
@@ -52,6 +55,7 @@ has_many :complaints, through: :characterizations
     def self.everything
       order("found_on desc") #simply lists everything out and then orders most recently found to the top.
     end
+
 
 end
 

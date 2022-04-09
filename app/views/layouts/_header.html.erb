@@ -1,10 +1,13 @@
 <header>
   <nav>
         <%= link_to image_tag("final-logo.png", :height => 70), root_path %>
+
     <ul class="left">
+    <%# if current_user %>
       <li>
-        <%= link_to "All Items", items_path %>
+        <%#= link_to "All Items", user_items_url %>
       </li>
+      <%# end %>
     </ul>
     <ul class="right">
       <% if current_user %>

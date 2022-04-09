@@ -1,2 +1,2 @@
-<h1>Editing <%= link_to @item.name, (@item) %></h1>
+<h1>Editing <%= link_to @item.name, user_item_path(@user, @item) %></h1>
 <%= render "form", item: @item%>

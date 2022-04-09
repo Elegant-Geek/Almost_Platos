@@ -382,6 +382,9 @@ footer {
   margin-top: 3rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+  // position:sticky;
+  // bottom:0;
+  // width:100%;
   
 // making the single copyright line centered by overriding p tag defaults specifically for the footer:
   p{
@@ -403,21 +406,24 @@ a.button-flair {
 // MY OWN ADD BUTTON CSS!
 .index-page-header { 
   
-  h1 {
+  h1, h2, h3 {
     width: 100%;
     margin-bottom: 1.5rem;
     position: relative;
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: flex-end;
 }
 
   a.button-add {
     @extend .btn, .btn-success;
     bottom: 0;
-    float: right;
+    // float: right;
+    margin-left: auto;
   }
+
 }
+
 
 // Admin Section
 

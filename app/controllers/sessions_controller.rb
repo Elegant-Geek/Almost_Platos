@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
                User.find_by(username: params[:email_or_username])
         if user && user.authenticate(params[:password])
           session[:user_id] = user.id
-          redirect_to (session[:intended_url] || user),
+          redirect_to (session[:intended_url] ||  user_items_url(user)), #redirects to indended OR the user's items
           notice: "Welcome back, #{user.name}!"
           session[:intended_url] = nil
         else
@@ -18,7 +18,8 @@ class SessionsController < ApplicationController
   
       def destroy
         session[:user_id] = nil #NOTE how it only makes it NIL again rather than destroying the session user id thing!
-        redirect_to root_url, notice: "You're now signed out!"
+        redirect_to login_path, notice: "You're now signed out!"
       end
 
   end
+ 

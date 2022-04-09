@@ -1,5 +1,5 @@
-<%= form_with(model: item, local: true) do |f| %>
-<%= render "shared/errors", object: item %>
+<%= form_with(model: [@user, @item], local: true) do |f| %>
+<%= render "shared/errors", object: @item %>
 
   <%= f.label :item_name %>
   <%= f.text_field :name, autofocus: true %>
@@ -25,8 +25,12 @@
   <%= f.label :brand %>
   <%= f.select :brand, Item::BRANDS, prompt: "Pick one" %>
 
+<% if item.new_record? %>
   <%= f.label :found_on %>
-  <%= f.date_field :found_on %>
+  <%= f.date_field :found_on, :value => Time.now.strftime("%Y-%m-%d") %>
+  <% else%>
+  <%= f.date_field :found_on%>
+  <% end %>
 
   <%= f.label :image_file_name %>
   <%= f.text_field :image_file_name %>

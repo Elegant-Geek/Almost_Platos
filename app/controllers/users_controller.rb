@@ -6,8 +6,10 @@ class UsersController < ApplicationController
         @users = User.all
     end
 
-    def show
+    def show # USER SHOWPAGE
+        # @user = User.find(params[:id])
         @user = User.find(params[:id])
+
     end
 
     def new
@@ -49,6 +51,7 @@ class UsersController < ApplicationController
       def user_params
         params.require(:user).permit(:name, :email, :password, :password_confirmation, :username)
       end
+
 
       # moved to applications controller to be re-used efficiently for/on ITEMS
       # def require_correct_user

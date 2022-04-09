@@ -1,5 +1,5 @@
 <% unless item.flair == "no flair" || item.flair == nil %> 
-      <h1><%= "#{item.name}" %> &nbsp; <%= link_to "#{item.flair}", edit_item_url, class: "button-flair" %></h1>
+      <h1><%= "#{item.name}" %> &nbsp; <%= link_to "#{item.flair}", edit_user_item_url, class: "button-flair" %></h1>
       <% else %>
       <h1><%= item.name %> 
     <% end %>

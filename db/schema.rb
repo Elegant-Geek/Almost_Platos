@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_08_091217) do
+ActiveRecord::Schema.define(version: 2022_04_08_230135) do
 
   create_table "characterizations", force: :cascade do |t|
     t.integer "item_id", null: false
@@ -31,13 +31,15 @@ ActiveRecord::Schema.define(version: 2022_04_08_091217) do
     t.string "name"
     t.integer "stars"
     t.text "description"
-    t.date "found_on", default: "2022-04-06"
+    t.datetime "found_on", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "brand"
     t.text "size"
     t.text "flair", default: "no flair"
     t.string "image_file_name", default: "placeholder-2.png"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,4 +53,5 @@ ActiveRecord::Schema.define(version: 2022_04_08_091217) do
 
   add_foreign_key "characterizations", "complaints"
   add_foreign_key "characterizations", "items"
+  add_foreign_key "items", "users"
 end
