@@ -70,7 +70,7 @@ class ItemsController < ApplicationController
         @item = @user.items.find(params[:id]) # I DID IT
 
         # @item = Item.find(params[:user_id])
-
+       
         # if @item.nil? && current_user
         #     redirect_to user_path(@current_user), alert: "unauthorized access!"
         # elsif @item.nil? 
