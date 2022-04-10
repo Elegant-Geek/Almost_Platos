@@ -44,8 +44,14 @@ class ItemsController < ApplicationController
 
     def create
         @user = User.find(params[:user_id])
-        @item = @user.items.new(item_params)        
-      end
+        @item = @user.items.new(item_params)  
+        if @item.save && current_user = @user
+            redirect_to user_items_path(@user),
+                          notice: "Item successfully added!"
+          else
+            render :new, alert: "Cannot alter another person's items!" 
+          end
+        end      
 
     def destroy
         @item.destroy

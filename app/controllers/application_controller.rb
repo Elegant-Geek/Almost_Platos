@@ -28,16 +28,15 @@ private
   # ^^allows this method to be a helper method available to ALL view templates
 
   def edit_correct_account
-    @user = User.find(params[:id]) #removes duplication for edit update destroy actions!
+    @user = User.find(params[:id]) 
     redirect_to user_items_url(@user), alert: "You may not alter #{@user.name}'s account!" unless current_user?(@user) 
     #redirect to user_items_url, so it just redirects back to the user's (not current user's) item list!
   end
 
   helper_method :edit_correct_account
 
-  
   def edit_correct_item
-    @user = User.find(params[:user_id]) #removes duplication for edit update destroy actions!
+    @user = User.find(params[:user_id])
     redirect_to user_items_url(@user), alert: "You may not alter #{@user.name}'s items!" unless current_user?(@user) 
     #redirect to user_items_url 
     # (aka their own list of items. it used to be set to root_url.)
