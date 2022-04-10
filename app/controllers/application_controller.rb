@@ -54,4 +54,9 @@ private
   helper_method :items_any?
   # I DID THAT
 
+  def users_any?
+    User.any?
+  end
+  helper_method :users_any?
+
 end
