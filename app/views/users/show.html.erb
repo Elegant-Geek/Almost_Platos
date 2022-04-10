@@ -5,7 +5,11 @@
     <% if @user.username.present? %>
     (<%= @user.username %>)
     <% end %>
-  <%= link_to "View #{@user.name}'s Items", user_items_url(@user), class: "button-add" %> 
+    <% if current_user?(@user) %>
+  &#8196;<%= link_to "View Your Items", user_items_url(@user), class: "button-no-float" %> 
+  <% else %>
+    &#8196;<%= link_to "View #{@user.name}'s Items", user_items_url(@user), class: "button-no-float" %> 
+  <% end %>
   </h1>
   </div>
   <h2><%= mail_to(@user.email) %></h2>
@@ -19,7 +23,7 @@
         class: "button edit" %>
 
         <%= link_to "Delete Account", @user, method: :delete, 
-        data: { confirm: 'Permanently delete account?!' },
+        data: { confirm: "Permanently delete account?! \nThis cannot be undone." },
         class: "button delete" %>
   </div>
  <% end %> 

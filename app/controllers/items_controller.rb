@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
  
     before_action :require_login, except: [:new, :create] #copied to items controller from users 
-    before_action :edit_correct_item, only: [:edit, :update, :destroy] #copied to items controller from users 
+    before_action :edit_correct_item, only: [:edit, :update, :destroy, :new] #copied to items controller from users 
     before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     def index

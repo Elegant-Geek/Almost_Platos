@@ -18,7 +18,7 @@
             <%= link_to "Account Settings", edit_user_path(current_user) %>
         </li>
         <li>
-        <%= link_to "Log Out", session_path, method: :delete,
+       &ensp;<%= link_to "Log Out", session_path, method: :delete,
               class: "button" %>
         </li>
       <% else %>
@@ -26,7 +26,7 @@
           <%= link_to "Sign Up", signup_path, class: "button" %>
         </li>
         <li>
-          <%= link_to "Log In", login_path, class: "button" %>
+          &ensp;<%= link_to "Log In", login_path, class: "button" %>
         </li>
       <% end %>
     </ul>

@@ -422,6 +422,13 @@ a.button-flair {
     margin-left: auto;
   }
 
+  a.button-no-float {
+    @extend .btn, .btn-success;
+    bottom: 0;
+    // float: right;
+    // margin-left: auto;
+  }
+
 }
 
 
