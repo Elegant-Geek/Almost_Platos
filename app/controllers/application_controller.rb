@@ -27,18 +27,23 @@ private
   helper_method :current_user?
   # ^^allows this method to be a helper method available to ALL view templates
 
-  def require_correct_user
+  def edit_correct_account
     @user = User.find(params[:id]) #removes duplication for edit update destroy actions!
+    redirect_to user_items_url(@user), alert: "You may not alter #{@user.name}'s account!" unless current_user?(@user) 
+    #redirect to user_items_url, so it just redirects back to the user's (not current user's) item list!
+  end
+
+  helper_method :edit_correct_account
+
+  
+  def edit_correct_item
+    @user = User.find(params[:user_id]) #removes duplication for edit update destroy actions!
     redirect_to user_items_url(@user), alert: "You may not alter #{@user.name}'s items!" unless current_user?(@user) 
     #redirect to user_items_url 
     # (aka their own list of items. it used to be set to root_url.)
   end
 
-  helper_method :require_correct_user
-  # this require_current_user must be in applications controller so items controller 
-  # (in addition to users controller) can also use this method for authentication gatekeeping purposes
-  # must be signed in in order to view your items, but ALSO must be correct user to show items (aka that
-  # is what this method does)
+  helper_method :edit_correct_item
 
   # (OUTDATED): defining a model-level (for now) method that returns true if user has items.  
   # (UPDATED): moved this to applications controller so it can access the user variable. 
