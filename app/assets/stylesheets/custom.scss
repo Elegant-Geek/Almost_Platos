@@ -380,7 +380,18 @@ ul.reviews {
 }
 
 // Footer
-
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: 3.5rem; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+footer, .page-wrap:after {
+  height: 85px; 
+}
 footer {
   background: $black;
   color: $light-gray;

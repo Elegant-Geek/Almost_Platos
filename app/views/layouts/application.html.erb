@@ -11,14 +11,16 @@
   </head>
 
   <body>
+
+
     <%= render "layouts/header" %>
     <%# this class="content" div makes the body spacing look really good %>
-    
+<div class="page-wrap">
     <div class="content">
       <%= render "layouts/flash" %>
       <%= yield %>
     </div>
-
+</div>
     <%= render "layouts/footer" %>
   </body>
 
