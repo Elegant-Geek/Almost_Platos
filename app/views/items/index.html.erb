@@ -24,7 +24,8 @@
       <% end %>
 <%# truncate movie description to 100 characters and cuts off during a space not mid-word%>
       <p>
-         <%= truncate(item.description, length: 200, separator: ' ') %>
+         <%#= truncate(item.description, length: 100, separator: ' ') %>
+         <%= simple_format(item.description.truncate(50, separator: ' ')) %>
       </p>
     </div>
   </section>

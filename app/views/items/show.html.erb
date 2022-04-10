@@ -8,7 +8,8 @@
         <%= render "shared/stars", percent: @item.stars_as_percent %>
       </h2>
       <p>
-        <%= @item.description %> 
+      <%= simple_format(@item.description) %>
+        <%#= @item.description %> 
       </p>
       <table>
         <tr>
