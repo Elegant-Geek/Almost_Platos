@@ -28,8 +28,9 @@ private
   # ^^allows this method to be a helper method available to ALL view templates
 
   def require_correct_user
-    @user = User.find(params[:user_id]) #removes duplication for edit update destroy actions!
-    redirect_to user_items_url unless current_user?(@user) #redirect to user_items_url 
+    @user = User.find(params[:id]) #removes duplication for edit update destroy actions!
+    redirect_to user_items_url(@user), alert: "You may not alter #{@user.name}'s items!" unless current_user?(@user) 
+    #redirect to user_items_url 
     # (aka their own list of items. it used to be set to root_url.)
   end
 
