@@ -106,6 +106,7 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.15.0)
+    more_possessive (1.0.2)
     msgpack (1.4.5)
     nio4r (2.5.8)
     nokogiri (1.13.3-x64-mingw32)
@@ -215,6 +216,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   jbuilder (~> 2.7)
+  more_possessive
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.6)
