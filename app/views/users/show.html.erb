@@ -12,7 +12,7 @@
     <% if current_user?(@user) %>
        View your items <%= link_to "here", user_items_url(@user) %> 
     <% else %>
-       View their items <%= link_to "here", user_items_url(@user) %> 
+       View <%= (@user.name.possessive) %> items <%= link_to "here", user_items_url(@user) %> 
     <% end %>
   </p>
    <p> Member since

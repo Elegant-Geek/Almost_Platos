@@ -1,9 +1,9 @@
 <div class="index-page-header">
-<% if @user == @current_user && items_any?(@user) %>
+<% if current_user?(@user) && items_any?(@user) %>
    <h1><%= link_to(@user.name.possessive, user_path(@user)) %>&nbsp;closet <%= link_to "Add New Item", new_user_item_url(@user), class: "button-add" %></h1>
-   <% elsif @user == @current_user && items_any?(@user) == false %>
+   <% elsif current_user?(@user) && items_any?(@user) == false %>
       <h3>No items yet. <%= link_to "Add New Item", new_user_item_url(@user), class: "button-add" %></h3>
-   <% elsif @user != @current_user && items_any?(@user) == false %>
+   <% elsif current_user?(@user) == false && items_any?(@user) == false %>
       <h3>No items yet. </h3>
    <% else %>
       <h1><%= link_to(@user.name.possessive, user_path(@user)) %> &nbsp;closet</h1>
