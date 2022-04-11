@@ -13,7 +13,8 @@
 <% @items.each do |item| %>
   <section class="movie">
   <div class="image">
-    <%= image_tag item.image_file_name %>
+    <%#= image_tag item.image_file_name %>
+     <%= link_to image_tag(item.image_file_name), user_item_path(@user, item) %>
     </div>
     <div class="summary">
       <h2>
@@ -25,7 +26,7 @@
 <%# truncate movie description to 100 characters and cuts off during a space not mid-word%>
       <p>
          <%#= truncate(item.description, length: 100, separator: ' ') %>
-         <%= simple_format(item.description.truncate(50, separator: ' ')) %>
+         <%= simple_format(item.description.truncate(75, separator: ' ')) %>
       </p>
     </div>
   </section>
