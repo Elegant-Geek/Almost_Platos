@@ -6,13 +6,74 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # ****************** FLASHION SEEDS FILE *******************
-User.create(
+@yoda = User.create!(
   name: "Yoda",
   username: "Yoda",
   email: 'yoda@example.com',
   password: 'lightsaber',
-  password_confirmation: 'lightsaber'
-)
+  password_confirmation: 'lightsaber')
+
+  @yoda.items.create!([{
+    name: 'Jedi Robes',
+    stars: 5,
+    description:
+    %{
+      Cool item this is!
+    }.squish,
+    found_on: "2021-02-26",
+    brand: 'unknown',
+    image_file_name: 'placeholder-2.png',
+    flair: 'Sold',
+    size: "XS"
+  },
+  {
+    name: 'Jedi Robes 2',
+    stars: 4,
+    description:
+    %{
+      MMMmmmMM! for laundry day this robe is!
+    }.squish,
+    found_on: "2021-02-27",
+    brand: 'unknown',
+    image_file_name: 'placeholder-2.png',
+    flair: 'Sold',
+    size: "XS"
+  }])
+
+  @luke = User.create!(
+    name: "Luke",
+    username: "Luke",
+    email: 'luke@example.com',
+    password: 'lightsaber',
+    password_confirmation: 'lightsaber')
+  
+    @luke.items.create!([{
+      name: 'Jedi Robes!',
+      stars: 5,
+      description:
+      %{
+        These look great on me. Correct size this time.
+      }.squish,
+      found_on: "2020-05-05",
+      brand: 'unknown',
+      image_file_name: 'placeholder-2.png',
+      flair: 'Bought',
+      size: "M"
+    },
+    {
+      name: 'Older Jedi Robes',
+      stars: 5,
+      description:
+      %{
+        I got rid of these years ago! Too small!
+      }.squish,
+      found_on: "2020-05-04",
+      brand: 'unknown',
+      image_file_name: 'placeholder-2.png',
+      flair: 'Sold',
+      size: "S"
+    }])
+
 
 Complaint.create(name: "too big")
 Complaint.create(name: "too small")
