@@ -1,22 +1,3 @@
-<% if users_any? %>
 <h1>Welcome to Almost Plato's!</h1>
 <br>
-<h3><%= pluralize(@users.size, "User") %></h3>
-<ul class="users">
-  <% @users.each do |user| %>
-    <li>
-      <%= link_to user.name, user %>
-      created
-      <%= time_ago_in_words(user.created_at) %> ago
-      
-      &emsp;||&emsp; View <%= link_to "#{user.name.possessive} closet", user_items_url(user) %>
-    </li>
-  <% end %>
-</ul>
-<% else %>
-<h1>Welcome to Almost Plato's!</h1>
-<br>
-<h3>No users yet.</h3>
-<p> Be the first to join <%= link_to("here", signup_url) %>! </p>
-
-<% end %>
+<%= render "displayusers", users: @users %>  
