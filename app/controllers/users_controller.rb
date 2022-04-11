@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :edit_correct_account, only: [:edit, :update, :destroy]
 
     def index
-        @users = User.all
+        @users = User.all.order(:name)
     end
 
     def show # USER SHOWPAGE
