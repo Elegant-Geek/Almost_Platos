@@ -4,13 +4,29 @@ class ItemsController < ApplicationController
     before_action :edit_correct_item, only: [:edit, :update, :destroy, :new] #copied to items controller from users 
     before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-    def index
-        # @items = Item.all
-        @user = User.find(params[:user_id])
-        # @items = User.items
-        @items = @user.items 
+    def index   
+        @user = User.find(params[:user_id])  
+        @container = @user.items
 
-    end
+       case params[:filter]
+         when "all_items"
+           @items = @container.all_items
+         when "recently_added"
+           @items = @container.recently_added
+         #when "most_liked"
+           #@items = @container.most_liked
+         when "top_rated"
+           @items = @container.all.top_rated
+        when "flair_bought"
+            @items = @container.all.flair_bought
+        when "flair_sold"
+            @items = @container.all.flair_sold
+        when "flair_favorites"
+            @items = @container.flair_favorites
+         else
+            @items = @user.items.all_items #most recently updated are at the top
+         end
+       end
 
     def show
         @complaints = @item.complaints.order(:name)

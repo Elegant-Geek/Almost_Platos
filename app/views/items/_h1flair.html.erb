@@ -1,5 +1,13 @@
-<% unless item.flair == "no flair" || item.flair == nil %> 
-      <h1><%= "#{item.name}" %> &nbsp; <%= link_to "#{item.flair}", edit_user_item_url, class: "button-flair" %></h1>
+<% if item.flair == "Favorite" %> 
+      <h1><%= "#{item.name}" %> &nbsp; <%= link_to "#{item.flair}", filtered_items_url(@user, :flair_favorites), class: "button-flair" %></h1>
+      <% elsif item.flair == "Bought" %>
+       <h1><%= "#{item.name}" %> &nbsp; <%= link_to "#{item.flair}", filtered_items_url(@user, :flair_bought), class: "button-flair" %></h1>
+       <% elsif item.flair == "Sold" %>
+       <h1><%= "#{item.name}" %> &nbsp; <%= link_to "#{item.flair}", filtered_items_url(@user, :flair_sold), class: "button-flair" %></h1>
+       <% elsif item.flair == "no flair" %>
+       <h1><%= item.name %> 
       <% else %>
-      <h1><%= item.name %> 
+      <h1>Flair should not be nil</h1>
     <% end %>
+
+    

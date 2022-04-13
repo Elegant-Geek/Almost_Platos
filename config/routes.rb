@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root "users#index"
   get "login" => "sessions#new"
   get "signup" => "users#new"
+  get "/users/:user_id/items/filter/:filter" => "items#index", as: :filtered_items
+
+
   resources :users do
     resources :items
   end

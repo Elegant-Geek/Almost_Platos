@@ -9,7 +9,12 @@
     </div>
     <div class="summary">
       <h2>
-        <%= link_to(item.name, user_item_url(@user, item)) %><%= render "shared/stars", percent: item.stars_as_percent %>
+        <%= link_to(item.name, user_item_url(@user, item)) %>   
+        <% unless item.flair == "no flair" || nil %>     
+        &emsp;<%#= link_to "#{item.flair}", user_item_url(@user, item), class: "button-flair-small" %>
+        &emsp; <button class="button-flair-small" ><%= item.flair %></button>
+        <% end %>
+        <%= render "shared/stars", percent: item.stars_as_percent %>
       </h2>
       <% if item.found_on.present? %>
         <h3>Found <%= format_found_on(item) %></h3>

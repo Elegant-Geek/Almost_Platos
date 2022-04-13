@@ -3,11 +3,11 @@
 <ul class="users">
   <% @users.each do |user| %>
     <li>
-      <%= link_to user.name, user %>
-      created
-      <%= time_ago_in_words(user.created_at) %> ago
-      
-      &emsp;||&emsp; View <%= link_to "#{user.name.possessive} closet", user_items_url(user) %>
+      <% if current_user?(user) %>      
+      View <%= link_to "your closet", user_items_url(user) %>
+      <% else %>
+      View <%= link_to "#{user.name.possessive} closet", user_items_url(user) %>
+      <% end %>
     </li>
   <% end %>
 </ul>

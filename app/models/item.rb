@@ -24,8 +24,8 @@ has_many :complaints, through: :characterizations
          "Urban Outfitters", "Vans", "Vineyard Vines", "Volcom", "Wild Fable", "Zara"]
 
   validates :description, :found_on, :stars, :size, :brand, presence: true
-  validates :name, presence: true#, uniqueness: { case_sensitive: false }
-  #^^ item names are unique regardless of whether they use upper or lower case characters!
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
+  #^^ item names MUST be unique regardless of whether they use upper or lower case characters!
   validates :description, length: { minimum: 10 }
   validates :image_file_name, format: {
     with: /\w+\.(jpg|png)\z/i,
@@ -35,6 +35,19 @@ has_many :complaints, through: :characterizations
   validates :size, inclusion: { in: SIZES }
   validates :brand, inclusion: { in: BRANDS }
   validates :stars, inclusion: { in: STARS } 
+
+# FOR ITEM MODEL
+#shows ALL ITEMS by the most recently updated!
+scope :all_items, -> { all.order("updated_at desc").order("found_on desc") } 
+#shows RECENTLY ADDED with limit of 5 displayed
+scope :recently_added, ->(max=5) { all.order("created_at desc").limit(max) } 
+# scope :MOST LIKED, TO BE DEFINED LATER
+#sorts all items by HIGHEST RATED, showing newest found_on at the top
+scope :top_rated, -> { all.order("stars desc").order("found_on desc") }  
+scope :flair_bought, -> { all.where(flair: "Bought") }  
+scope :flair_sold, -> { all.where(flair: "Sold") }  
+scope :flair_favorites, -> { all.where(flair: "Favorite") }  
+
 
     def stars_as_percent
       (stars / 5.0) * 100.0
@@ -50,10 +63,6 @@ has_many :complaints, through: :characterizations
 
     def self.favorite
       where(flair: "Favorite").order("found_on desc") #orders most recently found to the top!
-    end
-
-    def self.everything
-      order("found_on desc") #simply lists everything out and then orders most recently found to the top.
     end
 
 

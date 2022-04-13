@@ -397,8 +397,10 @@ footer {
   color: $light-gray;
   text-align: center;
   margin-top: 3rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
   // position:sticky;
   // bottom:0;
   // width:100%;
@@ -408,8 +410,9 @@ footer {
     margin-bottom: 0rem;
   }
 
+
   .button-anchor {
-    @extend .btn, .btn-outline-light;
+    @extend .btn, .btn-outline-light, .btn-sm;
   }
 }
 
@@ -419,8 +422,24 @@ a.button-flair {
   letter-spacing: 1px;
   background-color:#ffb002;
 }
+//Flair Button SMALL is deliberately not linked (missing "a")
+// this way I can only use it as a static thing for now on the index pages.
+// also added "disabled" after the class (in the view template) so that it cannot be clicked on.
+
+.button-flair-small {
+  @extend .btn, .btn-sm;
+  pointer-events: none;
+  letter-spacing: 1px;
+  background-color:#ffb002;
+}
+
+
+
 
 // MY OWN ADD BUTTON CSS!
+.user-index-header {
+  margin-bottom: 1.5rem;
+}
 .index-page-header { 
   
   h1, h2, h3 {

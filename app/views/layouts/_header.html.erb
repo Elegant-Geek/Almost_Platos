@@ -3,11 +3,22 @@
         <%= link_to image_tag("final-logo.png", :height => 70), root_path %>
 
     <ul class="left">
-    <%# if current_user %>
+    <% if current_user && @user %> 
+    <%# displays a neat header with filters if a current user exists for the index/show pages %>
+
       <li>
-        <%#= link_to "All Items", user_items_url %>
+          <%= nav_link_to "All Items", filtered_items_url(@user, :all_items) %>
       </li>
-      <%# end %>
+      <li>
+          <%= nav_link_to 'Recently Added', filtered_items_url(@user, :recently_added) %>
+      </li>
+      <%# <li> %>
+          <%#= nav_link_to 'Most Liked', filtered_items_url(@user, :most_liked) %>
+      <%# </li> %>
+      <li>
+          <%= nav_link_to 'Top Rated', filtered_items_url(@user, :top_rated) %>
+      </li>
+       <% end %>
     </ul>
     <ul class="right">
       <% if current_user %>

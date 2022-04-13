@@ -4,7 +4,7 @@ class User < ApplicationRecord
   # the has secure password is automatically generated when you create a resource with a "password:digest" field
   has_secure_password 
 
-validates :name, presence: true
+validates :name, presence: true #, uniqueness: { case_sensitive: false }
 validates :email, presence: true,
   format: { with: /\S+@\S+/ },
   uniqueness: { case_sensitive: false }
@@ -18,5 +18,8 @@ validates :username, allow_blank: true,
 def gravatar_id
   Digest::MD5::hexdigest(email.downcase)
 end
+
+scope :everyone, -> { all.order(:name) }
+
 
 end

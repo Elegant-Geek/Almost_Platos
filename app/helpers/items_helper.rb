@@ -10,7 +10,16 @@ module ItemsHelper
 
     def format_updated_at(item)
         #Already nil safe because "updated at" always exists for objects.
-        item.updated_at.strftime("%B %Y")
+        #(currently inactive, replaced with another helper method inside the view template)
+        item.updated_at.strftime("%B %e at %I:%M %p") 
     end
+
+    def nav_link_to(text, url)
+        if current_page?(url)
+          link_to(text, url, class: "active")
+        else
+          link_to(text, url)
+        end
+      end
 
 end
