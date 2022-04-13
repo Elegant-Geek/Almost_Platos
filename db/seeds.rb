@@ -179,7 +179,7 @@
 }])
 
 @anakin.items.create!([{
-  name: 'Main Outfit', stars: 5,
+  name: 'Main Moody Outfit', stars: 5,
   description: %{Bland, but somehow still unique and true to character. This is where the fun begins.}.squish,
   found_on: "2020-05-03",
   brand: 'unknown',
