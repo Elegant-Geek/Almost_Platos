@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # resources :favorites
   resources :complaints
   resource :session, only: [:new, :create, :destroy] #note singular form "resource and session. SINGULAR session"
   root "users#index"
@@ -8,9 +9,17 @@ Rails.application.routes.draw do
 
 
   resources :users do
-    resources :items
+    resources :items do
+      resources :favorites, only: [:create, :destroy] #three layer nesting
+    end
   end
+
+
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+
+
+
+

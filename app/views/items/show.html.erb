@@ -1,7 +1,8 @@
 <section class="movie-details">
 <div class="image">
     <%= image_tag @item.image_file_name %>
-  </div>
+</div>
+
   <div class="details">
     <%= render "h1flair", item: @item %>    
     <h2>
@@ -41,7 +42,25 @@
         <% end %>
       </div>
   </div>
+
+<aside>
+<% if @fans.present? %>
+    <h4>Liked By</h4>
+      <div>
+          <ul>
+              <% @fans.each do |user| %>
+                  <%= link_to profile_image(user), user %>
+                  <%= link_to user.name, user %>
+              <% end %>
+          </ul>
+      </div>
+<% end %>
+</aside>
+
+
 </section>
+
+
 
 
   <section class="admin">

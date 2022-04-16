@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     def show # USER SHOWPAGE
         # @user = User.find(params[:id])
         @user = User.find(params[:id])
-
+        @favorite_items = @user.favorite_items
     end
 
     def new

@@ -31,5 +31,17 @@
   </div>
  <% end %> 
 
+ <% if @favorite_items.present? %>
+ <br>
+  <h3>Liked Items</h3>
+  <div class="favorite-movies">
+    <% @favorite_items.each do |item| %>
+    <% @new_user = item.user_id %>
+      <%= link_to image_tag(item.image_file_name), user_item_url(@new_user, item) %>   
+
+    <% end %>
+  </div>
+<% end %>
+
 </section>
 

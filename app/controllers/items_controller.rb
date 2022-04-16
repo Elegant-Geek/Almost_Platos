@@ -13,8 +13,6 @@ class ItemsController < ApplicationController
            @items = @container.all_items
          when "recently_added"
            @items = @container.recently_added
-         #when "most_liked"
-           #@items = @container.most_liked
          when "top_rated"
            @items = @container.all.top_rated
         when "flair_bought"
@@ -30,6 +28,10 @@ class ItemsController < ApplicationController
 
     def show
         @complaints = @item.complaints.order(:name)
+        @fans = @item.fans
+        if current_user
+          @favorite = current_user.favorites.find_by(item_id: @item.id)
+        end
     end
 
     def edit

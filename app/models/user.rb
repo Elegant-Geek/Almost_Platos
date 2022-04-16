@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many :items, dependent: :destroy #destroy all items when a user is destroyed.
+  has_many :favorites, dependent: :destroy # if a user is destroyed, all of its favorites are also destroyed.
+  has_many :favorite_items, through: :favorites, source: :item
   accepts_nested_attributes_for :items
   # the has secure password is automatically generated when you create a resource with a "password:digest" field
   has_secure_password 

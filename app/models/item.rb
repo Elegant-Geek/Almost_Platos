@@ -5,8 +5,11 @@ class Item < ApplicationRecord
 
 has_many :characterizations, dependent: :destroy
 has_many :complaints, through: :characterizations
+has_many :favorites, dependent: :destroy
+# ^ if an item is destroyed, all of its favorites are also automatically destroyed.
+has_many :fans, through: :favorites, source: :user
 
-    FLAIRS = ["no flair", "Bought", "Sold", "Favorite"]
+    FLAIRS = ["no flair", "Bought", "Sold", "User Favorite"]
 
     SIZES = ["XS", "S", "M", "L", "XL", "Unknown", "One Size", "Other", "Shoe: 7.5M", "Shoe 8M", "Shoe 8.5W", "Shoe 9W", "Shoe 9.5W"]
 
@@ -44,9 +47,10 @@ scope :recently_added, ->(max=5) { all.order("created_at desc").limit(max) }
 # scope :MOST LIKED, TO BE DEFINED LATER
 #sorts all items by HIGHEST RATED, showing newest found_on at the top
 scope :top_rated, -> { all.order("stars desc").order("found_on desc") }  
+scope :most_liked, -> { fans.order("size desc").order("found_on desc") }  
 scope :flair_bought, -> { all.where(flair: "Bought") }  
 scope :flair_sold, -> { all.where(flair: "Sold") }  
-scope :flair_favorites, -> { all.where(flair: "Favorite") }  
+scope :flair_favorites, -> { all.where(flair: "User Favorite") }  
 
 
     def stars_as_percent

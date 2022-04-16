@@ -46,7 +46,7 @@
   found_on: "2020-05-04",
   brand: 'unknown',
   image_file_name: 'luke-main.jpg',
-  flair: 'Favorite',
+  flair: 'User Favorite',
   size: "M"
 },
 {
@@ -55,7 +55,7 @@
   found_on: "2020-05-04",
   brand: 'unknown',
   image_file_name: 'luke-pilot.jpg',
-  flair: 'Favorite',
+  flair: 'User Favorite',
   size: "M"
 }, 
 {
@@ -74,7 +74,7 @@
   found_on: "2020-05-04",
   brand: 'unknown',
   image_file_name: 'leia-main.jpg',
-  flair: 'Favorite',
+  flair: 'User Favorite',
   size: "S"
 },
 {
@@ -83,7 +83,7 @@
   found_on: "2020-05-06",
   brand: 'unknown',
   image_file_name: 'leia-slave.jpg',
-  flair: 'Favorite',
+  flair: 'User Favorite',
   size: "S"
 },
 {
@@ -120,7 +120,7 @@
   found_on: "2020-05-01",
   brand: 'unknown',
   image_file_name: 'padme-throne.jpg',
-  flair: 'Favorite',
+  flair: 'User Favorite',
   size: "XL"
 },
 {
@@ -165,7 +165,7 @@
   found_on: "2020-05-02",
   brand: 'unknown',
   image_file_name: 'padme-meadow.jpg',
-  flair: 'Favorite',
+  flair: 'User Favorite',
   size: "S"
 },
 {
@@ -184,7 +184,7 @@
   found_on: "2020-05-03",
   brand: 'unknown',
   image_file_name: 'anakin-sith.jpg',
-  flair: 'Favorite',
+  flair: 'User Favorite',
   size: "L"
 }])
 

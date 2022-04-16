@@ -1,13 +1,31 @@
-<% if item.flair == "Favorite" %> 
-      <h1><%= "#{item.name}" %> &nbsp; <%= link_to "#{item.flair}", filtered_items_url(@user, :flair_favorites), class: "button-flair" %></h1>
+<h1>
+<% if item.flair == "User Favorite" %> 
+     <%= "#{item.name}" %> &nbsp; <%= link_to "#{item.flair}", filtered_items_url(@user, :flair_favorites), class: "button-flair" %>
       <% elsif item.flair == "Bought" %>
-       <h1><%= "#{item.name}" %> &nbsp; <%= link_to "#{item.flair}", filtered_items_url(@user, :flair_bought), class: "button-flair" %></h1>
+      <%= "#{item.name}" %> &nbsp; <%= link_to "#{item.flair}", filtered_items_url(@user, :flair_bought), class: "button-flair" %>
        <% elsif item.flair == "Sold" %>
-       <h1><%= "#{item.name}" %> &nbsp; <%= link_to "#{item.flair}", filtered_items_url(@user, :flair_sold), class: "button-flair" %></h1>
+      <%= "#{item.name}" %> &nbsp; <%= link_to "#{item.flair}", filtered_items_url(@user, :flair_sold), class: "button-flair" %>
        <% elsif item.flair == "no flair" %>
-       <h1><%= item.name %> 
+      <%= item.name %>
       <% else %>
-      <h1>Flair should not be nil</h1>
+     Flair should not be nil
     <% end %>
 
+<% if current_user != @user %> 
+  <%# USERS CANNOT FAVORITE THEIR OWN ITEMS, ONLY OTHER USERS' ITEMS %>
+  <div class="faves">
+  <% if @favorite %>
+     <%= button_to "♡ Unlike", user_item_favorite_path(@user, @item, @favorite), method: :delete %>
+        <div class="count">
+        <%= @fans.size %>
+        </div>
+    <% else %>
+      <%= button_to "♥️ Like", user_item_favorites_path(@user, @item) %>
+        <div class="count">
+        <%= @fans.size %>
+        </div>
+    <% end %>
+  </div>
+<% end %>
+</h1>
     
