@@ -47,11 +47,11 @@ class UsersController < ApplicationController
           redirect_to login_url, alert: "Your account was successfully deleted!"  #this way no errors occur  
         elsif current_user.admin?
         @user.destroy
-        redirect_to root_url, alert: "This user's account successfully deleted!" 
+        redirect_to root_url, alert: "This user's account was successfully deleted!" 
         else
         @user.destroy
         session[:user_id] = nil
-        redirect_to login_url, alert: "Your was successfully deleted!"  #this way no errors occur  
+        redirect_to login_url, alert: "Your account was successfully deleted!"  #this way no errors occur  
         end
       end
 
