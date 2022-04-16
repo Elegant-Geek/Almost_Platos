@@ -8,6 +8,7 @@
      <%= link_to image_tag(item.image_file_name), user_item_path(@user, item) %>
     </div>
     <div class="summary">
+    <div class="header-2">
       <h2>
         <%= link_to(item.name, user_item_url(@user, item)) %>
         <% unless item.fans.size == 0 %>
@@ -17,8 +18,10 @@
         <%#= link_to "#{item.flair}", user_item_url(@user, item), class: "button-flair-small" %>
         &emsp; <button class="button-flair-small" ><%= item.flair %></button>
         <% end %>
+        </h2>
+            </div>
         <%= render "shared/stars", percent: item.stars_as_percent %>
-      </h2>
+
       <% if item.found_on.present? %>
         <h3>Found <%= format_found_on(item) %></h3>
       <% end %>
@@ -27,7 +30,8 @@
          <%#= truncate(item.description, length: 100, separator: ' ') %>
          <%= simple_format(item.description.truncate(75, separator: ' ')) %>
       </p>
-    </div>
+      </div>
+
   </section>
 <% end %>
 

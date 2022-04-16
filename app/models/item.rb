@@ -47,7 +47,6 @@ scope :recently_added, ->(max=5) { all.order("created_at desc").limit(max) }
 # scope :MOST LIKED, TO BE DEFINED LATER
 #sorts all items by HIGHEST RATED, showing newest found_on at the top
 scope :top_rated, -> { all.order("stars desc").order("found_on desc") }  
-scope :most_liked, -> { fans.order("size desc").order("found_on desc") }  
 scope :flair_bought, -> { all.where(flair: "Bought") }  
 scope :flair_sold, -> { all.where(flair: "Sold") }  
 scope :flair_favorites, -> { all.where(flair: "User Favorite") }  

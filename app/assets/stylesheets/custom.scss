@@ -144,11 +144,16 @@ section.movie {
     font-size: 1.5rem;
     margin-bottom: 0.25rem;
   }
+  
+  div .header-2 {
+    height: 2.5rem;
+  }
 
   h3 {
     font-size: 1.1rem;
     color: $secondary-text-color;
     font-weight: 400;
+    padding-top: 1.1rem;
   }
 
   p {
