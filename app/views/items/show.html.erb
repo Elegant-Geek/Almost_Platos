@@ -59,7 +59,7 @@
 </section>
 
 <section class="admin">
-  <% if current_user?(@user) || (current_user.admin? && @user.admin? == false) %>
+  <% if current_user?(@user) || (current_user && current_user.admin? && @user.admin? == false) %>
   <%#= link_to "Edit Item", edit_user_item_url(@user, item)), class: "button" %>
   <%= link_to "Edit Item", edit_user_item_path(@user, @item), class: "button" %>
   <%= link_to "Delete Item", [@user, @item], class: "button-delete", method: :delete,

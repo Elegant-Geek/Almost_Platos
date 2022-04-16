@@ -27,7 +27,7 @@
   <% end %>
 
 
-<% if current_user?(@user) || (current_user.admin? && @user.admin? == false) %>
+<% if current_user?(@user) || (current_user && current_user.admin? && @user.admin? == false) %>
   <div class="actions">
         <%= link_to "Edit Account", edit_user_path(@user),
         class: "button edit" %>
