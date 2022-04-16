@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_15_223003) do
+ActiveRecord::Schema.define(version: 2022_04_16_042008) do
 
   create_table "characterizations", force: :cascade do |t|
     t.integer "item_id", null: false
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2022_04_15_223003) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
+    t.boolean "admin", default: false
   end
 
   add_foreign_key "characterizations", "complaints"

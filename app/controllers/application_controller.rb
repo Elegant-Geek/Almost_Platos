@@ -29,7 +29,7 @@ private
 
   def edit_correct_account
     @user = User.find(params[:id]) 
-    redirect_to user_items_url(@user), alert: "You may not alter #{@user.name.possessive} account!" unless current_user?(@user) 
+    redirect_to user_items_url(@user), alert: "You may not alter #{@user.name.possessive} account!" unless current_user?(@user) || current_user.admin? 
     #redirect to user_items_url, so it just redirects back to the user's (not current user's) item list!
   end
 
@@ -37,7 +37,7 @@ private
 
   def edit_correct_item
     @user = User.find(params[:user_id])
-    redirect_to user_items_url(@user), alert: "You may not alter #{@user.name.possessive} items!" unless current_user?(@user) 
+    redirect_to user_items_url(@user), alert: "You may not alter #{@user.name.possessive} items!" unless current_user?(@user) || current_user.admin?
     #redirect to user_items_url 
     # (aka their own list of items. it used to be set to root_url.)
   end
