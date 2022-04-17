@@ -1,9 +1,15 @@
 <footer>
-<div>
-
-        All CSS/Sass Stylings are Copyright &copy; <%= Time.now.year %>
-        <%= link_to 'The Pragmatic Studio','https://pragmaticstudio.com' %>
+<div class="container">
+        <div>
+                Some CSS Styles &copy; <%= Time.now.year %>
+                <%= link_to 'Pragmatic Studio.','https://pragmaticstudio.com' %>
+        </div>
+        <div>
+                <%= link_to image_tag("facebook-app.png", :height => 30), "https://www.facebook.com/American1diot/" %>
+                &emsp;<%= link_to image_tag("ig-instagram.png", :height => 30), "https://www.instagram.com/heychickenhead/" %>
+                &emsp;<%= link_to image_tag("linkedin-app.png", :height => 30), "https://www.linkedin.com/in/clark-jamie/" %>
+                &emsp;<%= link_to image_tag("gh.png", :height => 30), "https://github.com/Elegant-Geek" %>
                 &emsp;&emsp;&emsp; <%= link_to "Back to Top", '#', class: "button-anchor" %>
-
-      </div>
+        </div>
+</div>
 </footer>

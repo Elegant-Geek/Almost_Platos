@@ -458,6 +458,13 @@ footer {
     margin-bottom: 0rem;
   }
 
+  .container {
+    display: flex; /* or inline-flex */
+    justify-content: space-between;
+  }
+
+
+
 
   .button-anchor {
     @extend .btn, .btn-outline-light, .btn-sm;
