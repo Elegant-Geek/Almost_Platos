@@ -3,13 +3,14 @@ class UsersController < ApplicationController
   before_action :edit_correct_account, only: [:edit, :update, :destroy]
 
     def index
-        @users = User.everyone
+        # @users = User.everyone
+        @users  = User.everyone.paginate(:page => params[:page], :per_page=>5)
     end
 
     def show # USER SHOWPAGE
         # @user = User.find(params[:id])
         @user = User.find(params[:id])
-        @favorite_items = @user.favorite_items
+        @favorite_items = @user.favorite_items.paginate(:page => params[:page], :per_page=>3)
     end
 
     def new

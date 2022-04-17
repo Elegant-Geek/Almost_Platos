@@ -4,7 +4,7 @@
 <% if admin_or_current_user %>
 <section class="user">
   <div class="actions">
-     <%= link_to "Delete Account", @user, method: :delete, 
+     &emsp;<%= link_to "Delete Account", @user, method: :delete, 
         data: { confirm: "Permanently delete account?! \nThis cannot be undone." },
         class: "button delete" %>
   </div>

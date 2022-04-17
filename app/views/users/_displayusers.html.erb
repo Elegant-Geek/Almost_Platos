@@ -1,5 +1,7 @@
 <% if users_any? %>
-<h3><%= pluralize(@users.size, "User") %></h3>
+
+<h3><%= pluralize(User.all.size, "User") %></h3>
+
 <ul class="users">
   <% @users.each do |user| %>
     <li>
@@ -10,6 +12,7 @@
       <% end %>
     </li>
   <% end %>
+ <%= will_paginate @users %>  
 </ul>
 <% else %>
 <h3>No users yet.</h3>

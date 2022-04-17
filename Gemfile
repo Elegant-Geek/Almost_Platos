@@ -26,6 +26,11 @@ gem 'bcrypt', '~> 3.1.7'
 # adding bootstrap for css and sass assets
 gem 'bootstrap', '~> 4.3.1'
 
+# giving pagination a whirl
+gem 'will_paginate'
+gem 'will_paginate-bootstrap4'
+
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

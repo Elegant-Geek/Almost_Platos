@@ -181,24 +181,26 @@ section.movie-details {
   }
 
   .details {
-    @extend .col-md-7, .text-left;
+    @extend .col-md-5, .text-left;
   }
 
   aside {
-    @extend .col-md-2;
+    @extend .col-md-4;
 
     img {
       margin-left: -40px;
     }
 
-    div {
-      column-count: 2;
+    ul {
+      margin-left: -20px;
+      list-style: none;
+      
+    }
+
+    h4 {
       margin-left: 40px;
     }
 
-    ul {
-      margin-left: -40px;
-    }
   }
 
   h1 {
@@ -262,10 +264,10 @@ section.movie-details {
     // box-shadow: $box-shadow;
   }
 
-  aside img {
-    width: 50px;
-    height: 50px;
-  }
+  // aside img {
+  //   width: 100px;
+  //   height: 100px;
+  // }
 
   a.review {
     @extend .btn, .btn-success;
@@ -294,7 +296,29 @@ ul.users {
 
 // User Show Page
 
+
+
 section.user {
+  @extend .row;
+
+  h1 {
+    margin-bottom: 1rem;
+
+  }
+
+
+  .details {
+    @extend .col-md-5, .text-left;
+    // border-right: 1px solid $border-color;
+
+  }
+
+  aside {
+    @extend .col-md-4;
+    padding: 0;
+
+
+  } 
 
   h2 {
     font-size: 1.35rem;
@@ -309,8 +333,9 @@ section.user {
   }
 
   a {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    // FIXES ODD PAGINATION BUTTONS (they were both at 1rem before)
   }
 
   .actions {
@@ -365,7 +390,7 @@ section.user {
 
   .favorite-movies {
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     margin-top: -1rem;
 
     img {
@@ -464,6 +489,10 @@ a.button-flair {
   margin-bottom: 1.5rem;
 }
 .index-page-header { 
+
+   h1 {
+    padding-left: 50px;
+  }
   
   h1, h2, h3 {
     width: 100%;
@@ -473,6 +502,8 @@ a.button-flair {
     // justify-content: space-between;
     align-items: flex-end;
 }
+
+
 
   a.button-add {
     @extend .btn, .btn-success;
