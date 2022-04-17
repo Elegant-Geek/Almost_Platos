@@ -59,4 +59,10 @@ private
   end
   helper_method :users_any?
 
+  def admin_or_current_user
+    current_user?(@user) || (current_user && current_user.admin? && @user.admin? == false)
+  end
+
+  helper_method :admin_or_current_user
+
 end
