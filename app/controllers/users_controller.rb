@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
     def index
         # @users = User.everyone 
-        #do not remove commits past this point
+        #safe commit!
         @users  = User.everyone.paginate(:page => params[:page], :per_page=>5)
     end
 
