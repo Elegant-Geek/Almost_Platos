@@ -7,7 +7,13 @@ gem "more_possessive"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.6'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+group :development, :test do
+  gem 'sqlite3', '~> 1.4'
+end
+# Add the PostgreSQL gem (pg) in the production group:
+group :production do
+  gem 'pg'
+end
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets

@@ -29,7 +29,7 @@
   <% if item.new_record? %>
   <%= f.date_field :found_on, :value => Time.now.strftime("%Y-%m-%d") %>
   <% else %>
-  <%= f.date_field :found_on%>
+  <%= f.date_field :found_on %>
   <% end %>
 
   <%= f.label :image_file_name %>
