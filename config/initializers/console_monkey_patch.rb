@@ -1,4 +1,4 @@
-return unless Rails.env.production?
+#return unless Rails.env.production?
 module Rails
     module ConsoleMethods
       def self.included(_base)
@@ -17,7 +17,7 @@ module Rails
           exit
         end
   
-        print 'Enter your password: '
+        print 'Enter your password:'
         pass = IO::console.getpass
         if user.authenticate(pass.strip)
           puts "\nWelcome, #{user.email}!"

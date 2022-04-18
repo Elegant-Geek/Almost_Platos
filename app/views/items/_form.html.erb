@@ -25,10 +25,10 @@
   <%= f.label :brand %>
   <%= f.select :brand, Brand.all.pluck(:name).sort, prompt: "Pick one" %>
 
-<% if item.new_record? %>
   <%= f.label :found_on %>
+  <% if item.new_record? %>
   <%= f.date_field :found_on, :value => Time.now.strftime("%Y-%m-%d") %>
-  <% else%>
+  <% else %>
   <%= f.date_field :found_on%>
   <% end %>
 
