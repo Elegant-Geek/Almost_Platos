@@ -2,6 +2,9 @@ class Item < ApplicationRecord
   # uses singular form of the parent (user) for one to many
   # no dependent destroy in this direction. Destroying item does NOT destroy user.
   belongs_to :user 
+  audited associated_with: :user #audit setup
+  # Now, when an audit is created for a item, that item's user is also saved alongside the audit. 
+  # This makes it much easier (and faster) to access audits indirectly related to a user.
 
 has_many :characterizations, dependent: :destroy
 has_many :complaints, through: :characterizations

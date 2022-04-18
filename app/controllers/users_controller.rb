@@ -42,7 +42,7 @@ class UsersController < ApplicationController
 
       def destroy
         # @user = User.find(params[:id])
-        if current_user.admin? && current_user == @user
+        if current_user.admin? && current_user?(@user)
           @user.destroy
           session[:user_id] = nil 
           redirect_to login_url, alert: "Your account was successfully deleted!"  #this way no errors occur  

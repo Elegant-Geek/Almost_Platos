@@ -62,6 +62,8 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    audited (5.0.2)
+      activerecord (>= 5.0, < 7.1)
     autoprefixer-rails (10.4.2.0)
       execjs (~> 2)
     bcrypt (3.1.17)
@@ -213,6 +215,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  audited (~> 5.0)
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.4)
   bootstrap (~> 4.3.1)

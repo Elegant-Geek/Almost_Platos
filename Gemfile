@@ -30,6 +30,8 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap4'
 
+#auditing
+gem "audited", "~> 5.0"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

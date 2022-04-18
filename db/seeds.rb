@@ -189,13 +189,11 @@
 }])
 
 
-Complaint.create(name: "too big")
-Complaint.create(name: "too small")
-Complaint.create(name: "too thin")
-Complaint.create(name: "too thick")
-Complaint.create(name: "felt cheap")
-Complaint.create(name: "looks bad")
-Complaint.create(name: "bad fit")
-Complaint.create(name: "uncomfortable")
-Complaint.create(name: "not me")
-Complaint.create(name: "too expensive")
+#Complaint.create(name: "too big")
+
+["too big", "too small", "too thin", "too thick", "felt cheap", "looks bad", "bad fit",
+   "uncomfortable", "not me", "too expensive"].each do |a|
+    Complaint.create(name: a)
+   end
+
+  

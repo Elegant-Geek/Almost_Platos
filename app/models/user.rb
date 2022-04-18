@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  # audited 
+  audited 
+  # (looks like password digest already handles this sensitive info! The above line is redundant.)
   has_many :items, dependent: :destroy #destroy all items when a user is destroyed.
   has_many :favorites, dependent: :destroy # if a user is destroyed, all of its favorites are also destroyed.
   has_many :favorite_items, through: :favorites, source: :item

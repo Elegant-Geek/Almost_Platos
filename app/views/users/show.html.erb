@@ -20,7 +20,7 @@
     <%= @user.created_at.strftime("%B %Y") %>
   </p>
   
-  <% if current_user && current_user.admin? && current_user == @user%>
+  <% if current_user && current_user.admin? && current_user?(@user)%>
   <p><b>You are an admin user.</b></p>
   <p>You may edit and delete users' items and accounts.</p>
   <% elsif @user.admin? %>
