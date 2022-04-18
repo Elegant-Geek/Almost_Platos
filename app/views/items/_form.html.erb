@@ -23,7 +23,7 @@
   <%= f.select :size, Item::SIZES, prompt: "Pick one" %>
 
   <%= f.label :brand %>
-  <%= f.select :brand, Item::BRANDS, prompt: "Pick one" %>
+  <%= f.select :brand, Brand.all.pluck(:name).sort, prompt: "Pick one" %>
 
 <% if item.new_record? %>
   <%= f.label :found_on %>

@@ -1,4 +1,4 @@
-#return unless Rails.env.production?
+return unless Rails.env.production?
 module Rails
     module ConsoleMethods
       def self.included(_base)
