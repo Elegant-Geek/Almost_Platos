@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :edit_correct_account, only: [:edit, :update, :destroy]
 
     def index
-        # @users = User.everyone
+        # @users = User.everyone #test
         @users  = User.everyone.paginate(:page => params[:page], :per_page=>5)
     end
 
