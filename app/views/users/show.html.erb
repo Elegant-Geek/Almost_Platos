@@ -46,7 +46,7 @@
   <div class="favorite-movies">
     <% @favorite_items.each do |item| %>
     <% @new_user = item.user_id %>
-      <%= link_to image_tag(item.image_file_name), user_item_url(@new_user, item) %>   
+      <%= link_to main_image(item), user_item_url(@new_user, item) %>   
     <% end %>
   </div>
 <% end %>

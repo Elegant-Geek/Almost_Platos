@@ -22,4 +22,12 @@ module ItemsHelper
         end
       end
 
+      def main_image(item)
+        if item.main_image.attached?
+          image_tag item.main_image
+        else
+          image_tag "placeholder-2.png"
+        end
+      end
+
 end

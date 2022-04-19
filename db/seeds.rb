@@ -30,8 +30,7 @@
   name: 'Main Outfit', stars: 5,
   description: %{Timeless, but also this really is Han's only outfit.}.squish,
   found_on: "2020-05-04",
-  brand: 'unknown',
-  image_file_name: 'han-main.jpg',
+  brand: 'unknown',  
   flair: 'no flair',
   size: "L"
 }])
@@ -41,7 +40,6 @@
   description: %{Gloomy but such a cool look.}.squish,
   found_on: "2020-05-06",
   brand: 'unknown',
-  image_file_name: 'luke-dark.jpg',
   flair: 'Bought',
   size: "M"
 },
@@ -50,7 +48,6 @@
   description: %{Looks comfy minus the collar!}.squish,
   found_on: "2020-05-05",
   brand: 'unknown',
-  image_file_name: 'luke-empire.jpg',
   flair: 'Bought',
   size: "M"
 },
@@ -59,7 +56,6 @@
   description: %{The iconic Luke look!}.squish,
   found_on: "2020-05-04",
   brand: 'unknown',
-  image_file_name: 'luke-main.jpg',
   flair: 'User Favorite',
   size: "M"
 },
@@ -68,7 +64,6 @@
   description: %{Another iconic (and heroic!) look.}.squish,
   found_on: "2020-05-04",
   brand: 'unknown',
-  image_file_name: 'luke-pilot.jpg',
   flair: 'User Favorite',
   size: "M"
 }, 
@@ -77,7 +72,6 @@
   description: %{Turning into a mini Han Solo here}.squish,
   found_on: "2020-05-04",
   brand: 'unknown',
-  image_file_name: 'luke-yavin.jpg',
   flair: 'no flair',
   size: "M"
 }])
@@ -87,7 +81,6 @@
   description: %{The iconic look that started it all complete with buns.}.squish,
   found_on: "2020-05-04",
   brand: 'unknown',
-  image_file_name: 'leia-main.jpg',
   flair: 'User Favorite',
   size: "S"
 },
@@ -96,7 +89,6 @@
   description: %{Showing off the costume in a more cheery setting.}.squish,
   found_on: "2020-05-06",
   brand: 'unknown',
-  image_file_name: 'leia-slave.jpg',
   flair: 'User Favorite',
   size: "S"
 },
@@ -105,7 +97,6 @@
   description: %{A bit bland for a princess...}.squish,
   found_on: "2020-05-06",
   brand: 'unknown',
-  image_file_name: 'leia-endor.jpg',
   flair: 'no flair',
   size: "M"
 },
@@ -114,7 +105,6 @@
   description: %{Very casual and cozy}.squish,
   found_on: "2020-05-05",
   brand: 'unknown',
-  image_file_name: 'leia-bespin.jpg',
   flair: 'no flair',
   size: "S"
 },
@@ -123,7 +113,6 @@
   description: %{Probaby not much warmer than Luke's.}.squish,
   found_on: "2020-05-05",
   brand: 'unknown',
-  image_file_name: 'leia-hoth.jpg',
   flair: 'no flair',
   size: "S"
 }])
@@ -133,7 +122,6 @@
   description: %{Episode 1 iconic look.}.squish,
   found_on: "2020-05-01",
   brand: 'unknown',
-  image_file_name: 'padme-throne.jpg',
   flair: 'User Favorite',
   size: "XL"
 },
@@ -142,7 +130,6 @@
   description: %{The makeup is the best part somehow. Something feels a bit off.}.squish,
   found_on: "2020-05-01",
   brand: 'unknown',
-  image_file_name: 'padme-kimono.jpg',
   flair: 'no flair',
   size: "XL"
 },
@@ -151,7 +138,6 @@
   description: %{Another elegant look of the queen.}.squish,
   found_on: "2020-05-01",
   brand: 'unknown',
-  image_file_name: 'padme-senate.jpg',
   flair: 'no flair',
   size: "XL"
 },
@@ -160,7 +146,6 @@
   description: %{Dark color but Padme pulls it off!}.squish,
   found_on: "2020-05-02",
   brand: 'unknown',
-  image_file_name: 'padme-indigo.jpg',
   flair: 'no flair',
   size: "S"
 },
@@ -169,7 +154,6 @@
   description: %{Lighter version of the indigo dress. All of her outfits really shine in Episode 2.}.squish,
   found_on: "2020-05-02",
   brand: 'unknown',
-  image_file_name: 'padme-gown-2.jpg',
   flair: 'no flair',
   size: "S"
 },
@@ -178,7 +162,6 @@
   description: %{Padme really can pull off any color. Iconic and beautiful!}.squish,
   found_on: "2020-05-02",
   brand: 'unknown',
-  image_file_name: 'padme-meadow.jpg',
   flair: 'User Favorite',
   size: "S"
 },
@@ -187,7 +170,6 @@
   description: %{Very bland for Padme, but she is not the main character here.}.squish,
   found_on: "2020-05-02",
   brand: 'unknown',
-  image_file_name: 'padme-fight.jpg',
   flair: 'no flair',
   size: "S"
 }])
@@ -197,7 +179,6 @@
   description: %{Bland, but somehow still unique and true to character. This is where the fun begins.}.squish,
   found_on: "2020-05-03",
   brand: 'unknown',
-  image_file_name: 'anakin-sith.jpg',
   flair: 'User Favorite',
   size: "L"
 }])
@@ -209,6 +190,32 @@
    "uncomfortable", "not me", "too expensive"].each do |a|
     Complaint.create(name: a)
    end
+
+   [
+    ['Main Outfit', "han-main.jpg"],
+    ['Dark Robes', "luke-dark.jpg"],
+    ['Empire Battle Outfit', "luke-empire.jpg"],
+    ['Main Chill Wear', "luke-main.jpg"],
+    ['Pilot Outfit', "luke-pilot.jpg"],
+    ['Yavin ceremony outfit', "luke-yavin.jpg"],
+    ['Senator Gown', "leia-main.jpg"],
+    ['Slave Bikini', "leia-slave.jpg"],
+    ['Endor Camo', "leia-endor.jpg"],
+    ['Cloud City', "leia-bespin.jpg"],
+    ['Hoth Coat', "leia-hoth.jpg"],
+    ['Negotiations with the Separatists Dress', "padme-throne.jpg"],
+    ['Kimono Dress', "padme-kimono.jpg"],
+    ['Vote of No Confidence Dress', "padme-senate.jpg"],
+    ['Indigo Dress', "padme-indigo.jpg"],
+    ['I Dont Like this Idea of Hiding', "padme-gown-2.jpg"],
+    ['Meadow Dress', "padme-meadow.jpg"],
+    ['Fight Jumpsuit', "padme-fight.jpg"],
+    ['Main Moody Outfit', "anakin-sith.jpg"]
+  ].each do |item_title, file_name|
+    item = Item.find_by!(name: item_title)
+    file = File.open(Rails.root.join("app/assets/images/#{file_name}"))
+    item.main_image.attach(io: file, filename: file_name)
+  end
 
 
   

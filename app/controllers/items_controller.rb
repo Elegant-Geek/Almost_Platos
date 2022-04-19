@@ -79,7 +79,7 @@ class ItemsController < ApplicationController
     private
     def item_params
         params.require(:item)
-        .permit(:name, :stars, :description, :found_on, :brand, :size, :flair, :image_file_name, complaint_ids: [])
+        .permit(:name, :stars, :description, :found_on, :brand, :size, :flair, :main_image, complaint_ids: [])
     end
 
     def set_user

@@ -5,7 +5,7 @@ class Item < ApplicationRecord
   audited associated_with: :user #audit setup
   # Now, when an audit is created for a item, that item's user is also saved alongside the audit. 
   # This makes it much easier (and faster) to access audits indirectly related to a user.
-
+has_one_attached :main_image
 has_many :characterizations, dependent: :destroy
 has_many :complaints, through: :characterizations
 has_many :favorites, dependent: :destroy
@@ -22,10 +22,8 @@ has_many :fans, through: :favorites, source: :user
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   #^^ item names MUST be unique regardless of whether they use upper or lower case characters!
   validates :description, length: { minimum: 10 }
-  validates :image_file_name, format: {
-    with: /\w+\.(jpg|png)\z/i,
-    message: "must be a JPG or PNG image"
-  }
+  validate :acceptable_image
+  # ^^ private method defined further below 
   validates :flair, inclusion: { in: FLAIRS }
   validates :size, inclusion: { in: SIZES }
   validates :brand, inclusion: { in: Brand.all.pluck(:name) }
@@ -58,6 +56,20 @@ scope :flair_favorites, -> { all.where(flair: "User Favorite") }
 
     def self.favorite
       where(flair: "Favorite").order("found_on desc") #orders most recently found to the top!
+    end
+
+    private
+    def acceptable_image
+      return unless main_image.attached?
+    
+      unless main_image.blob.byte_size <= 3.megabytes
+        errors.add(:main_image, "is too big (over 3MB)")
+      end
+    
+      acceptable_types = ["image/jpeg", "image/png"]
+      unless acceptable_types.include?(main_image.content_type)
+        errors.add(:main_image, "must be a JPEG or PNG")
+      end
     end
 
 

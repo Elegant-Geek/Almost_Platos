@@ -39,6 +39,9 @@ gem 'will_paginate-bootstrap4'
 #auditing
 gem "audited", "~> 5.0"
 
+#last but not least amazon s3 gem
+gem "aws-sdk-s3", require: false
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

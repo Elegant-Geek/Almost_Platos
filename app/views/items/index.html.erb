@@ -4,8 +4,8 @@
 <% @items.each do |item| %>
   <section class="movie">
   <div class="image">
-    <%#= image_tag item.image_file_name %>
-     <%= link_to image_tag(item.image_file_name), user_item_path(@user, item) %>
+
+     <%= link_to main_image(item), user_item_path(@user, item) %>
     </div>
     <div class="summary">
     <div class="header-2">
