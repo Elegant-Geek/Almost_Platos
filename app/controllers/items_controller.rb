@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
         when "flair_favorites"
             @items = @container.all.flair_favorites
          else
-            @items = @user.items.all_items #most recently updated are at the top
+            @items = @container.all_items #most recently updated are at the top
          end
        end
 
