@@ -1,16 +1,15 @@
-<%= render "indexpageheader", user: @user %>    
-   
-</div>
-<% @items.each do |item| %>
-  <section class="movie">
-  <div class="image">
+<%= render "indexpageheader", user: @user %>  
+<div style="padding-left: 5o;padding-left: 50px;"><%= will_paginate @container %></div>
 
-     <%= link_to main_image(item), user_item_path(@user, item) %>
-    </div>
-    <div class="summary">
-    <div class="header-2">
-      <h2>
-        <%= link_to(item.name, user_item_url(@user, item)) %>
+<% @items.each do |item| %>
+<section class="movie">
+  <div class="image">
+    <%= link_to main_image(item), user_item_path(@user, item) %>
+  </div>
+  <div class="summary">
+  <div class="header-2">
+    <h2>
+      <%= link_to(item.name, user_item_url(@user, item)) %>
         <% unless item.fans.size == 0 %>
         &nbsp;♥️ <%= item.fans.size %>
         <% end %>   
@@ -18,22 +17,20 @@
         <%#= link_to "#{item.flair}", user_item_url(@user, item), class: "button-flair-small" %>
         &nbsp; <button class="button-flair-small" ><%= item.flair %></button>
         <% end %>
-        </h2>
-            </div>
-        <%= render "shared/stars", percent: item.stars_as_percent %>
-
+    </h2>
+  </div>
+  <%= render "shared/stars", percent: item.stars_as_percent %>
       <% if item.found_on.present? %>
-        <h3>Found <%= format_found_on(item) %></h3>
+      <h3>Found <%= format_found_on(item) %></h3>
       <% end %>
-<%# truncate movie description to 100 characters and cuts off during a space not mid-word%>
       <p>
-         <%#= truncate(item.description, length: 100, separator: ' ') %>
-         <%= simple_format(item.description.truncate(75, separator: ' ')) %>
+      <%= simple_format(item.description.truncate(75, separator: ' ')) %>
       </p>
-      </div>
-
-  </section>
+  </div>
+</section>
 <% end %>
+<div style="padding-left: 5o;padding-left: 50px;"><%= will_paginate @container %></div>
+
 
 
 

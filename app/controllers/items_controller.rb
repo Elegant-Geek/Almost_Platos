@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
 
     def index   
         @user = User.find(params[:user_id])  
-        @container = @user.items
+        @container = @user.items.paginate(:page => params[:page], :per_page=>5)
 
        case params[:filter]
          when "all_items"
@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
         when "flair_sold"
             @items = @container.all.flair_sold
         when "flair_favorites"
-            @items = @container.flair_favorites
+            @items = @container.all.flair_favorites
          else
             @items = @user.items.all_items #most recently updated are at the top
          end
