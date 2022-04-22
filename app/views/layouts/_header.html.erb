@@ -1,11 +1,9 @@
 <header>
   <nav>
         <%= link_to image_tag("final-logo.png", :height => 70), root_path %>
-
     <ul class="left">
     <% if current_user && @user %> 
     <%# displays a neat header with filters if a current user exists for the index/show pages %>
-
       <li>
           <%= nav_link_to "All Items", filtered_items_url(@user, :all_items) %>
       </li>

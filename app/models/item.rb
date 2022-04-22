@@ -33,7 +33,7 @@ has_many :fans, through: :favorites, source: :user
 #shows ALL ITEMS by the most recently updated!
 scope :all_items, -> { all.order("updated_at desc").order("found_on desc") } 
 #shows RECENTLY ADDED with limit of 5 displayed
-scope :recently_added, ->(max=5) { all.order("created_at desc").limit(max) } 
+scope :recently_added, -> { all.order("created_at desc") } 
 # scope :MOST LIKED, TO BE DEFINED LATER
 #sorts all items by HIGHEST RATED, showing newest found_on at the top
 scope :top_rated, -> { all.order("stars desc").order("found_on desc") }  

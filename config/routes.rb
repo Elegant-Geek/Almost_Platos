@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :complaints
   resource :session, only: [:new, :create, :destroy] #note singular form "resource and session. SINGULAR session"
   root "users#index"
+  resources :brands, only: [:index, :new, :create]
+
   get "login" => "sessions#new"
   get "signup" => "users#new"
   get "/users/:user_id/items/filter/:filter" => "items#index", as: :filtered_items

@@ -688,6 +688,9 @@ form:not([class="button_to"]) {
 }
 
 // Errors
+.li-brands {
+  column-count: 3;
+}
 
 section.errors {
   margin: 1rem 0;

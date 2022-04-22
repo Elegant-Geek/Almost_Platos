@@ -14,8 +14,8 @@
 
 ["other", "unknown", "ASOS", "Abercrombie & Fitch", "Adidas", "All in Motion (Target)",
   "American Eagle", "Apt. 9", "BDG", "BELLA+CANVAS", "Billabong", "Birkenstock", "Brandy Melville", 
-  "Burton", "Cactus Man", "Carbon", "Champion", "Chubbies", "Coach", "Comfort Colors", "Converse", 
-  "Converse", "Crocs", "Dickies", "Dr. Martens", "Eddie Bauer", "Fabletics", "Forever 21", 
+  "Burton", "Cactus Man", "Carbon", "Champion", "Chubbies", "Coach", "Comfort Colors", "Converse", "Crocs", 
+  "Dickies", "Dr. Martens", "Eddie Bauer", "Fabletics", "Forever 21", 
   "Free People", "George", "Gildan", "Goodfellow", "Goodthreads", "Guess", "Gymshark", 
   "H&M", "Hollister", "Hot Topic", "Hurley", "J.Crew", "Jordans", "L.L.Bean", "Levi's", "Liquid Blue", 
   "Liz Claiborne", "Lululemon", "Mossimo Supply Co.", "Next Level", "Nike", "O'Neill", "Obey", "On the Byas", 

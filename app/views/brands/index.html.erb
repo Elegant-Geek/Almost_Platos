@@ -1,0 +1,26 @@
+<h1>List of Brands:</h1>
+<% unless current_user && current_user.admin? %>
+<p>Only admins can modify this list.</p>
+<% end %>
+
+<ul>
+<div class="li-brands">
+<% @brands.order("name asc").each do |brand| %>
+<li> <%= brand.name %> </li>
+<% end %>
+</div>
+
+</ul>
+ <%= will_paginate @brands %>  
+
+<section class="admin">
+<% if current_user && current_user.admin? %>
+<%= link_to "Add a Brand", new_brand_url, class: "button" %>
+<% end %>
+</section>
+
+
+
+
+
+

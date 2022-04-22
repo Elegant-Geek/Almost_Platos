@@ -1,7 +1,4 @@
 <% if users_any? %>
-
-<h3><%= pluralize(User.all.size, "User") %></h3>
-
 <ul class="users">
   <% @users.each do |user| %>
     <li>
@@ -12,9 +9,11 @@
       <% end %>
     </li>
   <% end %>
- <%= will_paginate @users %>  
+ <%= will_paginate @users %>  <p>View brands <%= link_to "here", brands_url, class: "button" %></p>
+
 </ul>
 <% else %>
 <h3>No users yet.</h3>
 <p> Be the first to join <%= link_to("here", signup_url) %>! </p>
 <% end %>
+
