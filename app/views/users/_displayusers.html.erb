@@ -9,11 +9,14 @@
       <% end %>
     </li>
   <% end %>
- <%= will_paginate @users %>  <p>View brands <%= link_to "here", brands_url, class: "button" %></p>
-
+<%= will_paginate @users %>  
+<li><strong>View list of brands <%= link_to "here", brands_url, class: "button" %></strong></li>
 </ul>
+
 <% else %>
 <h3>No users yet.</h3>
 <p> Be the first to join <%= link_to("here", signup_url) %>! </p>
 <% end %>
+
+
 

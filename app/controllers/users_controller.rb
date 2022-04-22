@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     def index
         # @users = User.everyone 
         #safe commit!
-        @users  = User.everyone.paginate(:page => params[:page], :per_page=>5)
+        @users  = User.everyone.paginate(:page => params[:page], :per_page=>10)
     end
 
     def show # USER SHOWPAGE

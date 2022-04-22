@@ -13,7 +13,7 @@ class BrandsController < ApplicationController
     def create
         @brand = Brand.new(brand_params) 
         if @brand.save
-            redirect_to root_url, notice: "Brand successfully added!"
+            redirect_to brands_url, notice: "Brand successfully added!"
         else
             render :new
         end

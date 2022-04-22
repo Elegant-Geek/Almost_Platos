@@ -1,4 +1,4 @@
-<h1>List of Brands:</h1>
+<h1>All Brands (<%= Brand.all.size %>):</h1>
 <% if current_user && current_user.admin? %>
 <p>You have permission to modify this list.</p>
 <% else %>
@@ -11,7 +11,6 @@
 <li> <%= brand.name %> </li>
 <% end %>
 </div>
-
 </ul>
  <%= will_paginate @brands %>  
 
