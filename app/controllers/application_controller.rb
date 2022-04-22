@@ -42,6 +42,11 @@ private
     # (aka their own list of items. it used to be set to root_url.)
   end
 
+  def add_new_correct_item
+    @user = User.find(params[:user_id])
+    redirect_to user_items_url(@user), alert: "You may not add to #{@user.name.possessive} items!" unless current_user && current_user?(@user)
+  end
+
   helper_method :edit_correct_item
 
   # (OUTDATED): defining a model-level (for now) method that returns true if user has items.  
