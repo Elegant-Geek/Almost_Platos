@@ -93,6 +93,7 @@ header {
         a {
           @extend .nav-link;
           padding-bottom: 1px;
+          border-bottom: 1px solid $primary; //<< adding this line stops left side from jumping during hover!
         }
 
         a:hover:not(.button),
