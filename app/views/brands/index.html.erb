@@ -8,7 +8,11 @@
 <ul>
 <div class="li-brands">
 <% @brands.order("name asc").each do |brand| %>
-<li> <%= brand.name %> </li>
+<% if current_user && current_user.admin? %>
+ <li><%= link_to brand.name, edit_brand_url(brand) %></li>
+<% else %>
+ <li><%= brand.name %></li>
+<% end %>
 <% end %>
 </div>
 </ul>
@@ -16,7 +20,8 @@
 
 <section class="admin">
 <% if current_user && current_user.admin? %>
-<%= link_to "Add a Brand", new_brand_url, class: "button" %>
+<%= link_to "Add a Brand", new_brand_url, class: "button-add" %>
+<% else %>
 <% end %>
 </section>
 

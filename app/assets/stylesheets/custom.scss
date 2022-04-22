@@ -350,7 +350,7 @@ section.user {
       }
 
       &.add {
-        @extend .btn-primary;
+        @extend .btn-success;
       }
 
       &.delete {
@@ -548,6 +548,11 @@ section.admin {
     @extend .btn, .btn-danger;
     letter-spacing: 1px;
   }
+
+  a.button-add {
+    @extend .btn, .btn-success;
+    letter-spacing: 1px;
+  }
  
 
 }
@@ -690,6 +695,8 @@ form:not([class="button_to"]) {
 // Errors
 .li-brands {
   column-count: 3;
+  list-style: none;
+  margin-left: -40px;
 }
 
 section.errors {

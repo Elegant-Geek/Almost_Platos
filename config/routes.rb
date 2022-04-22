@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :complaints
   resource :session, only: [:new, :create, :destroy] #note singular form "resource and session. SINGULAR session"
   root "users#index"
-  resources :brands, only: [:index, :new, :create]
+  resources :brands
 
   get "login" => "sessions#new"
   get "signup" => "users#new"
@@ -15,9 +15,6 @@ Rails.application.routes.draw do
       resources :favorites, only: [:create, :destroy] #three layer nesting
     end
   end
-
-
-
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

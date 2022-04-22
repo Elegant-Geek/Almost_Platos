@@ -1,0 +1,20 @@
+  <%= form_with(model: @brand, local: true) do |f| %>
+  <h1>Editing "<%= @brand.name %>"</h1>
+
+  <%= render "shared/errors", object: @brand %>
+
+  <%= f.label "Brand Name" %>
+  <%= f.text_field :name, autofocus: true, required: true, placeholder: "(Rename?)" %>
+  <%=f.submit "Update Brand", data: { confirm: "#{pluralize(item_size_for(@brand), "item")} will have their brand(s) updated." } %>
+
+<section class="user">
+  <div class="actions">
+  &emsp;<%= link_to "Delete Brand", @brand, method: :delete, 
+        data: { confirm: "Delete brand?! \n#{pluralize(item_size_for(@brand), "item")} will have their brand(s) set to 'unknown'." },
+        class: "button delete" %>
+  </div>
+  </section>
+<% end %>
+<br>
+<%= link_to("Back to all brands", brands_path) %>
+

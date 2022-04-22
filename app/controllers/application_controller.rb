@@ -71,7 +71,10 @@ private
   helper_method :admin_or_current_user
 
   def admin_brand_access?
-    redirect_to brands_url, alert: "Only admins can modify brands!" unless (current_user && current_user.admin?)
+    redirect_to brands_url, alert: "Only admins may modify brands!" unless (current_user && current_user.admin?)
   end
   helper_method :admin_brand_access?
+
+
+
 end
