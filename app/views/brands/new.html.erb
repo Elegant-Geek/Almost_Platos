@@ -5,7 +5,7 @@
   <%= render "shared/errors", object: @brand %>
 
   <%= f.label "Brand Name" %>
-  <%= f.text_field :name, placeholder: "(No duplicates allowed!)" %>
+  <%= f.text_field :name, autofocus: true, required: true, placeholder: "(No duplicates allowed!)" %>
   <%=f.submit "Add Brand"%>
 
 <% end %>

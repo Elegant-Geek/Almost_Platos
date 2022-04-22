@@ -18,6 +18,8 @@ has_many :fans, through: :favorites, source: :user
 
     STARS = [1, 2, 3, 4, 5]
 
+    BRANDS = Brand.all.pluck(:name)
+
   validates :description, :found_on, :stars, :size, :brand, presence: true
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   #^^ item names MUST be unique regardless of whether they use upper or lower case characters!
@@ -26,7 +28,7 @@ has_many :fans, through: :favorites, source: :user
   # ^^ private method defined further below 
   validates :flair, inclusion: { in: FLAIRS }
   validates :size, inclusion: { in: SIZES }
-  validates :brand, inclusion: { in: Brand.all.pluck(:name) }
+  validates :brand, inclusion: { in: BRANDS } #THIS WORKS!
   validates :stars, inclusion: { in: STARS } 
 
 # FOR ITEM MODEL

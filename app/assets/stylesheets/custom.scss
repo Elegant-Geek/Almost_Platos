@@ -182,11 +182,11 @@ section.movie-details {
   }
 
   .details {
-    @extend .col-md-5, .text-left;
+    @extend .col-md-6, .text-left;
   }
 
   aside {
-    @extend .col-md-4;
+    @extend .col-md-3;
 
     img {
       margin-left: -40px;
@@ -309,13 +309,13 @@ section.user {
 
 
   .details {
-    @extend .col-md-5, .text-left;
+    @extend .col-md-6, .text-left;
     // border-right: 1px solid $border-color;
 
   }
 
   aside {
-    @extend .col-md-4;
+    @extend .col-md-3;
     padding: 0;
 
 
