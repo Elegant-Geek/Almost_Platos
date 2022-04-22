@@ -28,7 +28,7 @@ has_many :fans, through: :favorites, source: :user
   # ^^ private method defined further below 
   validates :flair, inclusion: { in: FLAIRS }
   validates :size, inclusion: { in: SIZES }
-  validates :brand, inclusion: { in: BRANDS } #THIS WORKS!
+  # validates :brand, inclusion: { in: BRANDS } #THIS WORKS!
   validates :stars, inclusion: { in: STARS } 
 
 # FOR ITEM MODEL
