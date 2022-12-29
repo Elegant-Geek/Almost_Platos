@@ -2,7 +2,7 @@ require_relative "boot"
 
 require "rails/all"
 # #fix forbidden class error in heroku yaml
-config.active_record.yaml_column_permitted_classes = [Symbol, Date, Time]
+# config.active_record.yaml_column_permitted_classes = [Symbol, Date, Time]
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
