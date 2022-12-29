@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # ****************** FLASHION SEEDS FILE *******************
-@han = User.create(name: "Han", username: "SoloSolo", email: 'han@example.com', password: 'lightsaber', password_confirmation: 'lightsaber')
-@luke = User.create(name: "Luke", username: "JustLuke", email: 'luke@example.com', password: 'lightsaber', password_confirmation: 'lightsaber')
-@leia = User.create(name: "Leia", username: "Princess", email: 'leia@example.com', password: 'lightsaber', password_confirmation: 'lightsaber')
-@padme = User.create(name: "Padme", username: "FashionQueen", email: 'padme@example.com', password: 'lightsaber', password_confirmation: 'lightsaber')
-@anakin = User.create(name: "Anakin", username: "Annie", email: 'anakin@example.com', password: 'lightsaber', password_confirmation: 'lightsaber')
+@han = User.create!(name: "Han", username: "SoloSolo", email: 'han@example.com', password: 'lightsaber', password_confirmation: 'lightsaber')
+@luke = User.create!(name: "Luke", username: "JustLuke", email: 'luke@example.com', password: 'lightsaber', password_confirmation: 'lightsaber')
+@leia = User.create!(name: "Leia", username: "Princess", email: 'leia@example.com', password: 'lightsaber', password_confirmation: 'lightsaber')
+@padme = User.create!(name: "Padme", username: "FashionQueen", email: 'padme@example.com', password: 'lightsaber', password_confirmation: 'lightsaber')
+@anakin = User.create!(name: "Anakin", username: "Annie", email: 'anakin@example.com', password: 'lightsaber', password_confirmation: 'lightsaber')
 
 ["other", "unknown", "ASOS", "Abercrombie & Fitch", "Adidas", "All in Motion (Target)",
   "American Eagle", "Apt. 9", "BDG", "BELLA+CANVAS", "Billabong", "Birkenstock", "Brandy Melville", 
